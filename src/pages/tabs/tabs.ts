@@ -23,6 +23,5 @@ export class TabsPage {
   tab05Root: any = OthersPage;
   tab06Root: any = MyArtMuseumPage;
   constructor() {
-
   }
 }
