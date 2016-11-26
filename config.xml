@@ -4,7 +4,7 @@
 	<name>hengtong-mobile</name>
 	<description>An awesome Ionic/Cordova app.</description>
 	<author email="hi@ionicframework" href="http://ionicframework.com/">
-	   Ionic Framework Team
+		Ionic Framework Team
 	</author>
 	<content src="index.html" />
 	<access origin="*" />
@@ -31,5 +31,4 @@
 	<feature name="StatusBar">
 		<param name="ios-package" onload="true" value="CDVStatusBar" />
 	</feature>
-	<engine name="android" spec="6.1.0" />
-</widget>
+<engine name="android" spec="6.1.0" /></widget>
