@@ -8,6 +8,7 @@ import { IntangibleCulturalHeritagePage } from '../intangible-cultural-heritage/
 import { CulturalForumPage } from '../cultural-forum/cultural-forum';
 import { ThematicActivityPage } from '../thematic-activity/thematic-activity';
 import { JournalArticlesPage } from '../journal-articles/journal-articles';
+
 @Component({
   templateUrl: 'tabs.html'
 })

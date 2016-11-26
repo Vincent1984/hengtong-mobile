@@ -9,8 +9,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { MuseumHomePage } from '../pages/museum-home/museum-home';
 import { IntangibleCulturalHeritagePage } from '../pages/intangible-cultural-heritage/intangible-cultural-heritage';
 import { CulturalForumPage } from '../pages/cultural-forum/cultural-forum';
-import { ThematicActivityPage } from '../thematic-activity/thematic-activity';
-import { JournalArticlesPage } from '../journal-articles/journal-articles';
+import { JournalArticlesPage } from '../pages/journal-articles/journal-articles';
+import { ThematicActivityPage } from '../pages/thematic-activity/thematic-activity';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { JournalArticlesPage } from '../journal-articles/journal-articles';
     IntangibleCulturalHeritagePage,
     MuseumHomePage,
     CulturalForumPage,
-    ThematicActivityPage,
-    JournalArticlesPage
+    JournalArticlesPage,
+    ThematicActivityPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,8 +38,8 @@ import { JournalArticlesPage } from '../journal-articles/journal-articles';
     MuseumHomePage,
     IntangibleCulturalHeritagePage,
     CulturalForumPage,
-    ThematicActivityPage,
-    JournalArticlesPage
+    JournalArticlesPage,
+    ThematicActivityPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
