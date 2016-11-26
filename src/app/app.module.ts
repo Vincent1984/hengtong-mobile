@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 //我们的项目
 import { MuseumHomePage } from '../pages/museum-home/museum-home';
 import { IntangibleCulturalHeritagePage } from '../pages/intangible-cultural-heritage/intangible-cultural-heritage';
+import { CulturalForumPage } from '../pages/cultural-forum/cultural-forum';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IntangibleCulturalHeritagePage } from '../pages/intangible-cultural-her
     HomePage,
     TabsPage,
     MuseumHomePage,
-    IntangibleCulturalHeritagePage
+    IntangibleCulturalHeritagePage,
+    CulturalForumPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -30,7 +32,8 @@ import { IntangibleCulturalHeritagePage } from '../pages/intangible-cultural-her
     HomePage,
     TabsPage,
     MuseumHomePage,
-    IntangibleCulturalHeritagePage
+    IntangibleCulturalHeritagePage,
+    CulturalForumPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

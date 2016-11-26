@@ -5,6 +5,8 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 
 import { IntangibleCulturalHeritagePage } from '../intangible-cultural-heritage/intangible-cultural-heritage';
+import { CulturalForumPage } from '../cultural-forum/cultural-forum';
+
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -16,6 +18,7 @@ export class TabsPage {
   tab3Root: any = ContactPage;
 
   tab01Root: any = IntangibleCulturalHeritagePage;
+  tab02Root: any = CulturalForumPage;
 
   constructor() {
 
