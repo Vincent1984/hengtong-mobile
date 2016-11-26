@@ -10,6 +10,7 @@ import { JournalArticlesPage } from '../pages/journal-articles/journal-articles'
 import { ThematicActivityPage } from '../pages/thematic-activity/thematic-activity';
 import { OthersPage } from '../pages/others/others';
 import { MyArtMuseumPage } from '../pages/my-art-museum/my-art-museum';
+import { ItemDetailsPage } from '../pages/item-details/item-details';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MyArtMuseumPage } from '../pages/my-art-museum/my-art-museum';
     JournalArticlesPage,
     ThematicActivityPage,
     OthersPage,
-    MyArtMuseumPage
+    MyArtMuseumPage,
+    ItemDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -36,7 +38,8 @@ import { MyArtMuseumPage } from '../pages/my-art-museum/my-art-museum';
     JournalArticlesPage,
     ThematicActivityPage,
     OthersPage,
-    MyArtMuseumPage
+    MyArtMuseumPage,
+    ItemDetailsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
