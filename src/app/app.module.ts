@@ -11,6 +11,8 @@ import { IntangibleCulturalHeritagePage } from '../pages/intangible-cultural-her
 import { CulturalForumPage } from '../pages/cultural-forum/cultural-forum';
 import { JournalArticlesPage } from '../pages/journal-articles/journal-articles';
 import { ThematicActivityPage } from '../pages/thematic-activity/thematic-activity';
+import { OthersPage } from '../pages/others/others';
+import { MyArtMuseumPage } from '../pages/my-art-museum/my-art-museum';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ThematicActivityPage } from '../pages/thematic-activity/thematic-activi
     MuseumHomePage,
     CulturalForumPage,
     JournalArticlesPage,
-    ThematicActivityPage
+    ThematicActivityPage,
+    OthersPage,
+    MyArtMuseumPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -39,7 +43,9 @@ import { ThematicActivityPage } from '../pages/thematic-activity/thematic-activi
     IntangibleCulturalHeritagePage,
     CulturalForumPage,
     JournalArticlesPage,
-    ThematicActivityPage
+    ThematicActivityPage,
+    OthersPage,
+    MyArtMuseumPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
