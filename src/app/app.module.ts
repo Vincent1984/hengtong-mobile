@@ -6,7 +6,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 //我们的项目
-import { MuseumHomePage } from '../pages/museum-home/home';
+import { MuseumHomePage } from '../pages/museum-home/museum-home';
+import { IntangibleCulturalHeritagePage } from '../pages/intangible-cultural-heritage/intangible-cultural-heritage';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MuseumHomePage } from '../pages/museum-home/home';
     ContactPage,
     HomePage,
     TabsPage,
-    MuseumHomePage
+    MuseumHomePage,
+    IntangibleCulturalHeritagePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -27,7 +29,8 @@ import { MuseumHomePage } from '../pages/museum-home/home';
     ContactPage,
     HomePage,
     TabsPage,
-    MuseumHomePage
+    MuseumHomePage,
+    IntangibleCulturalHeritagePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
