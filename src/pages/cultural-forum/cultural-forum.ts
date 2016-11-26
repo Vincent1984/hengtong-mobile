@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-cultural-forum',
-  templateUrl: 'thematic-activity.html'
+  templateUrl: 'cultural-forum.html'
 })
 export class CulturalForumPage {
 
