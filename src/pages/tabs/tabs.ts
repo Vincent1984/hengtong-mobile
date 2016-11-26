@@ -6,7 +6,8 @@ import { ContactPage } from '../contact/contact';
 
 import { IntangibleCulturalHeritagePage } from '../intangible-cultural-heritage/intangible-cultural-heritage';
 import { CulturalForumPage } from '../cultural-forum/cultural-forum';
-
+import { ThematicActivityPage } from '../thematic-activity/thematic-activity';
+import { JournalArticlesPage } from '../journal-articles/journal-articles';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -19,7 +20,8 @@ export class TabsPage {
 
   tab01Root: any = IntangibleCulturalHeritagePage;
   tab02Root: any = CulturalForumPage;
-
+  tab03Root: any = ThematicActivityPage;
+  tab04Root: any = JournalArticlesPage;
   constructor() {
 
   }
