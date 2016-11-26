@@ -16,9 +16,11 @@ npm-debug.log*
 .sass-cache/
 .tmp/
 .versions/
+.settings/
 coverage/
 dist/
 node_modules/
+merges/
 tmp/
 temp/
 hooks/
@@ -29,9 +31,7 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 
+.tern-project
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-
-.settings/
-.tern-project
