@@ -1,17 +1,121 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>大连市群众文化艺术馆</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content>
+  <ion-slides #mySlider [options]="mySlideOptions">
+    <ion-slide>
+      <img src="/assets/image/culture.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="/assets/image/culture.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="/assets/image/culture.jpg" />
+    </ion-slide>
+  </ion-slides>
+  <div class="thumb-image">
+    <div class="cell">
+      <img src="/assets/image/culture.jpg" />
+    </div>
+    <div class="cell">
+      <img src="/assets/image/culture.jpg" />
+    </div>
+    <div class="cell">
+      <img src="/assets/image/culture.jpg" />
+    </div>
+    <div class="cell">
+      <img src="/assets/image/culture.jpg" />
+    </div>
+  </div>
+  <div class="segments" [ngStyle]="{'height': 'calc(127px + 2rem + '+3+'*(8rem + 16px))'}">
+    <ion-header>
+      <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="legacy">
+          <ion-segment-button value="puppies">
+            非遗动态
+          </ion-segment-button>
+          <ion-segment-button value="kittens">
+            非遗名录
+          </ion-segment-button>
+          <ion-segment-button value="ducklings">
+            非遗传承
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content padding>
-  <h2>主页</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    <ion-content>
+      <div [ngSwitch]="legacy">
+        <ion-list *ngSwitchCase="'puppies'">
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>非物质文化遗产名录代表性传承</h2>
+            <p>非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承</p>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>非物质文化遗产名录代表性传承</h2>
+            <p>非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承</p>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>非物质文化遗产名录代表性传承</h2>
+            <p>非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承</p>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'kittens'">
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>Daffy</h2>
+            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>Daffy</h2>
+            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>Daffy</h2>
+            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'ducklings'">
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>Daffy</h2>
+            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>Daffy</h2>
+            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="/assets/image/culture.jpg" />
+            </ion-thumbnail>
+            <h2>Daffy</h2>
+            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div>
+        <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
+      </div>
+    </ion-content>
+  </div>
 </ion-content>
