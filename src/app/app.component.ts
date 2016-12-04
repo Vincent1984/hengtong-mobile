@@ -16,7 +16,7 @@ export class MyApp {
 	rootPage = LoginPage;
 	pages: Array<{ title: string, component: any }>;
 
-	constructor(platform: Platform, public menu: MenuController) {
+	constructor( platform: Platform, public menu: MenuController) {
 		platform.ready().then(() => {
 			// Okay, so the platform is ready and our plugins are available.
 			// Here you can do any higher level native things you might need.

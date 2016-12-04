@@ -9,14 +9,9 @@ import { RegistPage } from '../regist/regist';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-
-  @ViewChild(Nav) nav: Nav;
-
-  registPage: any = RegistPage;
-
   todo = {};
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, private formBuilder: FormBuilder) {
     this.ionViewLoaded();
   }
   ionViewLoaded() {
@@ -30,6 +25,6 @@ export class LoginPage {
   }
   openRegist(){
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(this.registPage);
+    this.navCtrl.push(RegistPage);
   }
 }

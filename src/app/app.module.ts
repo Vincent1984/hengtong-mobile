@@ -27,7 +27,8 @@ import { RegistPage } from '../pages/regist/regist';
 			pageTransition: 'ios'
 		})
 	],
-	bootstrap: [IonicApp],
+
+  bootstrap: [IonicApp],
 	entryComponents: [
 		MyApp,
 		TabsPage,
