@@ -1,3 +1,15 @@
-column-b {
+column-with-more {
 
+}
+
+column-with-more ion-header {
+	background-color: none !important;
+}
+
+column-with-more ion-header::after {
+	background-image: none !important;
+}
+
+column-with-more ion-title {
+	text-align: center;
 }
