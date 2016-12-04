@@ -1,4 +1,7 @@
 page-museum-home {
+  .content{
+    background: $rawBackgroundOptional;
+  }
   ion-slides{
     height: 40vw;
     width: 100vw;
@@ -31,10 +34,11 @@ page-museum-home {
     display: table;
     table-layout: fixed;
     border-collapse: collapse;
+    margin-bottom: 16px;
     .cell{
       display: table-cell;
       height: calc(100vw/4);
-      border: 16px solid transparent;
+      border: 16px solid white;
       img{
         border-radius: 5px;
         width: 100%;
@@ -45,8 +49,11 @@ page-museum-home {
 
   .segments{
     position: relative;
+    margin-bottom: 16px;
     .scroll-content{
       border-bottom: 1px solid $border;
+      margin-bottom:0px !important;
+      background: white;
       ion-thumbnail{
         img{
           height: 100%;
@@ -70,4 +77,91 @@ page-museum-home {
 
     }
   }
+
+  .compaign{
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    background: white;
+    .compaign-head{
+      margin: 0 16px;
+      border-bottom: 2px solid $themeColor;
+      h2{
+        margin:0;
+        font-weight: bold;
+        display: inline-block;
+        line-height: 4rem;
+      }
+      .readmore{
+        float:right;
+        line-height: 4rem;
+      }
+    }
+    .compaign-content{
+      display: table-row;
+      .compaign-cell{
+        display: table-cell;
+        //height: calc(50vw - 24px);
+        border: 16px solid white;
+        img{
+          width: 100%;
+        }
+        p{
+          margin:8px 0 0;
+          //font-weight: bold;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .suggestion{
+    margin-bottom:50px;
+    background: white;
+    .suggestion-head{
+      margin: 0 16px;
+      border-bottom: 2px solid $themeColor;
+      h2{
+        margin:0;
+        font-weight: bold;
+        display: inline-block;
+        line-height: 4rem;
+      }
+      .readmore{
+        float:right;
+        line-height: 4rem;
+      }
+    }
+    ion-item{
+      ion-thumbnail{
+        img{
+          height: 100%;
+        }
+      }
+      .item-inner{
+        .input-wrapper{
+          align-items: flex-start;
+          h2{
+            font-weight:bold;
+            margin-bottom: 0.5rem;
+          }
+          p{
+            white-space: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .readmore{
+    height: 2rem;
+    text-decoration:none;
+    line-height: 2rem;
+    color: $themeColor;
+    ion-icon{
+      margin-left: 8px;
+    }
+  }
 }
+
+
