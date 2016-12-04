@@ -5,18 +5,12 @@
 				<ion-icon name="arrow-back"></ion-icon>
 			</button>
 		</ion-buttons>
-		<ion-title>非遗文化</ion-title>
+		<ion-title>{{columnModel.columnName}}</ion-title>
 	</ion-toolbar>
 
-	<ion-segment [(ngModel)]="relationship" mode="md" color="dark">
-		<ion-segment-button value="1" (ionSelect)="selectedSubTab()">
-			<span>非遗动态</span>
-		</ion-segment-button>
-		<ion-segment-button value="2" (ionSelect)="selectedSubTab()">
-			<span>非遗名录</span>
-		</ion-segment-button>
-		<ion-segment-button value="3" (ionSelect)="selectedSubTab()">
-			<span>非遗传承</span>
+	<ion-segment mode="md" *ngIf="hasSubTab" [(ngModel)]="selectSubColumnId" color="dark">
+		<ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
+			<span>{{subColumn.columnName}}</span>
 		</ion-segment-button>
 	</ion-segment>
 </ion-header>

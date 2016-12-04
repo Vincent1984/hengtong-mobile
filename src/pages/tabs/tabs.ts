@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 //import { HomePage } from '../home/index';
 import { MuseumHomePage } from '../museum-home/museum-home';
-import { ColumnAPage } from '../column/column-a';
+import { ColumnWithTabPage } from '../column/column-with-tab';
 
 import { ColumnModel } from '../../models/column-model';
 
@@ -14,11 +14,11 @@ export class TabsPage {
   // should be each tab's root Page
 
   tab_00: any = MuseumHomePage;
-  tab_01: any = ColumnAPage;
-  tab_02: any = ColumnAPage;
-  tab_03: any = ColumnAPage;
-  tab_04: any = ColumnAPage;
-  tab_05: any = ColumnAPage;
+  tab_01: any = ColumnWithTabPage;
+  tab_02: any = ColumnWithTabPage;
+  tab_03: any = ColumnWithTabPage;
+  tab_04: any = ColumnWithTabPage;
+  tab_05: any = ColumnWithTabPage;
 
   columnParams: Array<ColumnModel>;
 

@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'column-b',
-  templateUrl: 'column-b.html'
+  selector: 'column-with-more',
+  templateUrl: 'column-with-more.html'
 })
-export class ColumnBPage {
+export class ColumnWithMorePage {
 
   selectedItem: any;
   icons: string[];
