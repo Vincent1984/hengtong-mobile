@@ -9,7 +9,7 @@
 	height: 32px;
 }
 
-@for $i from 1 to 7 {
+@for $i from 0 to 6 {
 	//for ios
 	.ion-ios-tab0#{$i} {
 		@extend .ion-tab-icon-base;
@@ -20,4 +20,3 @@
 		content: url("../assets/images/tab0#{$i}.png");
 	}
 }
-
