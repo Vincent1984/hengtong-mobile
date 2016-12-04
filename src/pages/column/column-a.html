@@ -1,0 +1,46 @@
+<ion-header mode="ios" align-title="center">
+	<ion-toolbar mode="ios" no-border-bottom>
+		<ion-buttons mode="ios" left>
+			<button ion-button>
+				<ion-icon name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title>非遗文化</ion-title>
+	</ion-toolbar>
+
+	<ion-segment [(ngModel)]="relationship" mode="md" color="dark">
+		<ion-segment-button value="1" (ionSelect)="selectedSubTab()">
+			<span>非遗动态</span>
+		</ion-segment-button>
+		<ion-segment-button value="2" (ionSelect)="selectedSubTab()">
+			<span>非遗名录</span>
+		</ion-segment-button>
+		<ion-segment-button value="3" (ionSelect)="selectedSubTab()">
+			<span>非遗传承</span>
+		</ion-segment-button>
+	</ion-segment>
+</ion-header>
+
+<ion-content>
+	<ion-refresher (ionRefresh)="doRefresh($event)" pullMax="600">
+		<ion-refresher-content
+			pullingText="我刷,我刷,我刷刷刷"
+			refreshingSpinner="circles"
+			refreshingText="正在努力加载,请稍后...">
+		</ion-refresher-content>
+	</ion-refresher>
+
+	<ion-list>
+		<ion-list-header *ngFor="let item of items">
+			<ion-thumbnail item-left>
+				<img src="{{item.icon}}" alt="" />
+			</ion-thumbnail >
+			<h2>{{item.title}}</h2>
+			<p>{{item.note}}</p>
+		</ion-list-header>
+	</ion-list>
+
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

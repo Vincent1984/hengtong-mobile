@@ -1,0 +1,24 @@
+column-a {
+
+}
+
+column-a ion-header {
+	background-color: none !important;
+}
+
+column-a ion-header::after {
+	background-image: none !important;
+}
+
+column-a ion-title {
+	text-align: center;
+}
+
+column-a ion-segment-button {
+	border-color: #fff !important;
+}
+
+column-a ion-segment-button.segment-activated {
+	border-color: #387ef5 !important;
+	color: #387ef5 !important;
+}
