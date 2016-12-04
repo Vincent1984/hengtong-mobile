@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavController } from 'ionic-angular';
+import { RegistPage } from '../regist/regist';
 
 @Component({
   selector: 'login-page',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginPage {
   todo = {};
 
-  constructor(public router: Router, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, private formBuilder: FormBuilder) {
     this.ionViewLoaded();
   }
   ionViewLoaded() {
@@ -23,6 +24,6 @@ export class LoginPage {
   }
   openRegist(){
     // navigate to the new page if it is not the current page
-    this.router.navigate(['regist']);
+    this.navCtrl.push(RegistPage);
   }
 }
