@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 
-import { Nav } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { RegistPage } from '../regist/regist';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'login-page',
@@ -21,7 +22,8 @@ export class LoginPage {
     });
   }
   loginForm(){
-    console.log(this.todo.toString())
+    console.log(this.todo.toString());
+    this.navCtrl.push(TabsPage);
   }
   openRegist(){
     // navigate to the new page if it is not the current page

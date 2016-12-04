@@ -1,5 +1,24 @@
 login-page {
-  background: url(/assets/images/culture.jpg) no-repeat center/cover;
+  background: url(/assets/images/cover.jpg) no-repeat center/cover;
+  ion-content{
+    background: none;
+    &.content-md{
+      background: none;
+    }
+
+    .scroll-content{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .above-form{
+      text-align: center;
+      h2{
+        font-weight: bold;
+      }
+    }
+  }
   p {
     margin: 20px 0;
     line-height: 22px;
