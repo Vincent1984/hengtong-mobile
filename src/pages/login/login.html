@@ -22,6 +22,7 @@
       <ion-input placeholder="请输入密码" type="password" formControlName="password"></ion-input>
     </ion-item>
     <button ion-button type="submit" [disabled]="!todo.valid">登陆</button>
+    <button ion-button (click)="openRegist()">注册</button>
   </form>
 
 </ion-content>
