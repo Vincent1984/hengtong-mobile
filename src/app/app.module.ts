@@ -11,6 +11,9 @@ import { ThematicActivityPage } from '../pages/thematic-activity/thematic-activi
 import { OthersPage } from '../pages/others/others';
 import { MyArtMuseumPage } from '../pages/my-art-museum/my-art-museum';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
+import { LoginPage } from '../pages/login/login';
+import { RegistPage } from '../pages/regist/regist';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
     ThematicActivityPage,
     OthersPage,
     MyArtMuseumPage,
-    ItemDetailsPage
+    LoginPage,
+    ItemDetailsPage,
+    RegistPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -39,7 +44,9 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
     ThematicActivityPage,
     OthersPage,
     MyArtMuseumPage,
-    ItemDetailsPage
+    LoginPage,
+    ItemDetailsPage,
+    RegistPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
