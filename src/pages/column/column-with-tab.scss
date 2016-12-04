@@ -1,24 +1,15 @@
 column-with-tab {
+	ion-title {
+		text-align: center !important;
+	}
 
+	ion-segment-button {
+		border-color: #fff !important;
+	}
+
+	ion-segment-button.segment-activated {
+		border-color: $themeColor !important;
+		color: $themeColor !important;
+	}
 }
 
-column-with-tab ion-header {
-	background-color: none !important;
-}
-
-column-with-tab ion-header::after {
-	background-image: none !important;
-}
-
-column-with-tab ion-title {
-	text-align: center;
-}
-
-column-with-tab ion-segment-button {
-	border-color: #fff !important;
-}
-
-column-with-tab ion-segment-button.segment-activated {
-	border-color: $themeColor !important;
-	color: $themeColor !important;
-}

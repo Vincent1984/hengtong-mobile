@@ -1,15 +1,10 @@
 column-with-more {
+	ion-title {
+		text-align: center !important;
+	}
 
-}
-
-column-with-more ion-header {
-	background-color: none !important;
-}
-
-column-with-more ion-header::after {
-	background-image: none !important;
-}
-
-column-with-more ion-title {
-	text-align: center;
+	.toolbar-background-md {
+		background: #fff !important;
+		height: 48.391px !important;
+	}
 }

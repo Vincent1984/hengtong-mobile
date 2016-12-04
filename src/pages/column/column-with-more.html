@@ -1,4 +1,4 @@
-<ion-header mode="ios" align-title="center">
+<ion-header mode="ios" no-shadow>
   <ion-toolbar mode="ios" no-border-bottom>
     <ion-buttons mode="ios" left>
       <button ion-button>
@@ -8,7 +8,9 @@
     <ion-title>{{columnModel.columnName}}</ion-title>
   </ion-toolbar>
 
-  <ion-item mode="ios">List Header</ion-item>
+  <ion-segment mode="md">
+    <ion-icon name="arrow-forward" right></ion-icon>
+  </ion-segment>
 </ion-header>
 
 <ion-content>
