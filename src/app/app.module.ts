@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MuseumHomePage } from '../pages/museum-home/museum-home';
 import { ColumnWithTabPage } from '../pages/column/column-with-tab';
+import { ColumnWithMorePage } from '../pages/column/column-with-more';
 import { LoginPage } from '../pages/login/login';
 import { RegistPage } from '../pages/regist/regist';
 
@@ -12,6 +13,7 @@ import { RegistPage } from '../pages/regist/regist';
   declarations: [
     MyApp,
     ColumnWithTabPage,
+    ColumnWithMorePage,
     TabsPage,
     MuseumHomePage,
     LoginPage,
@@ -31,6 +33,7 @@ import { RegistPage } from '../pages/regist/regist';
   entryComponents: [
     MyApp,
     ColumnWithTabPage,
+    ColumnWithMorePage,
     TabsPage,
     MuseumHomePage,
     LoginPage,
