@@ -15,11 +15,11 @@
   <form [formGroup]="todo" (ngSubmit)="loginForm()">
     <ion-item>
       <ion-label>账号 : </ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
+      <ion-input placeholder="请输入账号" type="text" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>密码 : </ion-label>
-      <ion-textarea formControlName="password"></ion-textarea>
+      <ion-input placeholder="请输入密码" type="password" formControlName="password"></ion-input>
     </ion-item>
     <button ion-button type="submit" [disabled]="!todo.valid">登陆</button>
   </form>
