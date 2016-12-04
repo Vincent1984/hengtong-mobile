@@ -1,24 +1,24 @@
-column-a {
+column-with-tab {
 
 }
 
-column-a ion-header {
+column-with-tab ion-header {
 	background-color: none !important;
 }
 
-column-a ion-header::after {
+column-with-tab ion-header::after {
 	background-image: none !important;
 }
 
-column-a ion-title {
+column-with-tab ion-title {
 	text-align: center;
 }
 
-column-a ion-segment-button {
+column-with-tab ion-segment-button {
 	border-color: #fff !important;
 }
 
-column-a ion-segment-button.segment-activated {
+column-with-tab ion-segment-button.segment-activated {
 	border-color: $themeColor !important;
 	color: $themeColor !important;
 }
