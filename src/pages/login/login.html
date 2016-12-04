@@ -10,16 +10,18 @@
 
 <ion-content padding>
 
-  <h3>登陆页面</h3>
+  <h3>登陆</h3>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  <form [formGroup]="todo" (ngSubmit)="loginForm()">
+    <ion-item>
+      <ion-label>账号 : </ion-label>
+      <ion-input placeholder="请输入账号" type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>密码 : </ion-label>
+      <ion-input placeholder="请输入密码" type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!todo.valid">登陆</button>
+  </form>
 
 </ion-content>
