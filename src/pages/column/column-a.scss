@@ -19,6 +19,6 @@ column-a ion-segment-button {
 }
 
 column-a ion-segment-button.segment-activated {
-	border-color: #387ef5 !important;
-	color: #387ef5 !important;
+	border-color: $themeColor !important;
+	color: $themeColor !important;
 }
