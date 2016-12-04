@@ -14,7 +14,7 @@ export class LoginPage {
 
   registPage: any = RegistPage;
 
-  todo = {};R
+  todo = {};
 
   constructor(private formBuilder: FormBuilder) {
     this.ionViewLoaded();
