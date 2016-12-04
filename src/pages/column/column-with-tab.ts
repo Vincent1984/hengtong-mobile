@@ -14,12 +14,14 @@ export class ColumnWithTabPage {
   columnModel: any;
   subColumns: any;
   hasSubTab: any;
+  selectSubColumnId: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.columnModel = navParams.data;
     
     if (this.columnModel.subColumns) {
       this.hasSubTab = true;
+      this.selectSubColumnId = this.columnModel.subColumns[0].columnId;
     }
 
     this.items = [];
@@ -28,11 +30,11 @@ export class ColumnWithTabPage {
     }
   }
 
-  selectedSubTab = function() {
-
+  selectedSubTab(subColumn) {
+    this.selectSubColumnId = subColumn.columnId;
   }
 
-  doRefresh = function(refresher) {
+  doRefresh(refresher) {
     refresher.complete();
   }
 

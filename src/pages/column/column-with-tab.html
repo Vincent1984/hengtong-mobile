@@ -8,8 +8,8 @@
 		<ion-title>非遗文化</ion-title>
 	</ion-toolbar>
 
-	<ion-segment mode="md" *ngIf="hasSubTab" [(ngModel)]="subColumnKey" color="dark">
-		<ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab()">
+	<ion-segment mode="md" *ngIf="hasSubTab" [(ngModel)]="selectSubColumnId" color="dark">
+		<ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
 			<span>{{subColumn.columnName}}</span>
 		</ion-segment-button>
 	</ion-segment>
