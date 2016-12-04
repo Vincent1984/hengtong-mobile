@@ -35,6 +35,7 @@ page-museum-home {
     table-layout: fixed;
     border-collapse: collapse;
     margin-bottom: 16px;
+    border-bottom: 1px solid $border;
     .cell{
       display: table-cell;
       height: calc(100vw/4);
@@ -84,6 +85,7 @@ page-museum-home {
     border-collapse: collapse;
     margin-bottom: 16px;
     background: white;
+    border-bottom: 1px solid $border;
     .compaign-head{
       margin: 0 16px;
       border-bottom: 2px solid $themeColor;
