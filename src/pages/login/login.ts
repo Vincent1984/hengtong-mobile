@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 
-import { Nav } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { RegistPage } from '../regist/regist';
 
 @Component({
