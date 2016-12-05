@@ -21,6 +21,9 @@ login-page {
           border:none;
           background: transparent;
           padding: 0 16px;
+          .item-inner{
+            border:none !important;
+          }
           &.header{
             ion-label{
               text-align: center;
