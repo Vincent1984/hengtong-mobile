@@ -5,11 +5,13 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>{{columnModel.columnName}}</ion-title>
+    <ion-title text-center>{{columnModel.columnName}}</ion-title>
   </ion-toolbar>
 
-  <ion-segment mode="md">
-    <ion-icon name="arrow-forward" right></ion-icon>
+  <ion-segment mode="md" no-border-bottom color="dark">
+    <ion-segment-button text-left>
+      <span>推送消息</span>
+    </ion-segment-button>
   </ion-segment>
 </ion-header>
 

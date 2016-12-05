@@ -1,10 +1,7 @@
 column-with-more {
-	ion-title {
-		text-align: center !important;
+
+	ion-segment-button {
+		border-color: $themeColor !important;
 	}
 
-	.toolbar-background-md {
-		background: #fff !important;
-		height: 48.391px !important;
-	}
 }

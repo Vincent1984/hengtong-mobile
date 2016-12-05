@@ -5,10 +5,10 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>{{columnModel.columnName}}</ion-title>
+    <ion-title text-center>{{columnModel.columnName}}</ion-title>
   </ion-toolbar>
 
-  <ion-segment mode="md" *ngIf="hasSubTab" [(ngModel)]="selectSubColumnId" color="dark">
+  <ion-segment mode="md" no-border-bottom color="dark" *ngIf="hasSubTab" [(ngModel)]="selectSubColumnId">
     <ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
       <span>{{subColumn.columnName}}</span>
     </ion-segment-button>
