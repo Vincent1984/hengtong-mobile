@@ -6,11 +6,7 @@ column-with-more {
 		ion-segment-button {
 			border-color: $themeColor !important;
 		}
-	
-		.toolbar-background {
-			background: #fff !important;
-		}
-	
+
 		ion-segment {
 			ion-buttons {
 				margin-left: 0 !important;
@@ -41,6 +37,12 @@ column-with-more {
 
 	[border-bottom] {
 		border-bottom: 1px solid #ddd;
+	}
+
+	[bg-white] {
+		.toolbar-background {
+			background: #fff !important;
+		}
 	}
 
 }

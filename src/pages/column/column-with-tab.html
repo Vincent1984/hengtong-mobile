@@ -8,7 +8,7 @@
     <ion-title text-center>{{columnModel.columnName}}</ion-title>
   </ion-toolbar>
 
-  <ion-toolbar mode="md" no-padding-top no-padding-bottom *ngIf="hasSubTab">
+  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom *ngIf="hasSubTab">
     <ion-segment mode="md" color="dark" border-bottom [(ngModel)]="selectSubColumnId">
       <ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
         <span>{{subColumn.columnName}}</span>
