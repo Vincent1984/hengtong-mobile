@@ -17,9 +17,9 @@ export class TabsPage {
 
   tab_00: any = MuseumHomePage;
   tab_01: any = ColumnWithTabPage;
-  tab_02: any = ColumnWithMorePage;
-  tab_03: any = ColumnWithMorePage;
-  tab_04: any = ColumnWithMorePage;
+  tab_02: any = ColumnWithTabPage;
+  tab_03: any = ColumnWithTabPage;
+  tab_04: any = ColumnWithTabPage;
   tab_05: any = ColumnWithMorePage;
 
   columnParams: Array<ColumnModel>;

@@ -1,18 +1,20 @@
 <ion-header mode="ios" no-shadow>
-  <ion-toolbar mode="ios" no-border-bottom>
+  <ion-toolbar mode="ios" border-bottom>
     <ion-buttons mode="ios" left>
       <button ion-button>
-        <ion-icon name="arrow-back"></ion-icon>
+        <ion-icon name="arrow-back" color="dark"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title text-center>{{columnModel.columnName}}</ion-title>
   </ion-toolbar>
 
-  <ion-segment mode="md" no-border-bottom color="dark" *ngIf="hasSubTab" [(ngModel)]="selectSubColumnId">
-    <ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
-      <span>{{subColumn.columnName}}</span>
-    </ion-segment-button>
-  </ion-segment>
+  <ion-toolbar mode="md" no-padding-top no-padding-bottom *ngIf="hasSubTab">
+    <ion-segment mode="md" color="dark" border-bottom [(ngModel)]="selectSubColumnId">
+      <ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
+        <span>{{subColumn.columnName}}</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
