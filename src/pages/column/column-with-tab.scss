@@ -11,6 +11,10 @@ column-with-tab {
 			border-color: $themeColor !important;
 			color: $themeColor !important;
 		}
+
+		[border-bottom] {
+			border-bottom: 1px solid #ddd !important;
+		}
 	}
 
 	ion-content {
@@ -27,15 +31,10 @@ column-with-tab {
 		padding-bottom: 0 !important;
 	}
 
-	[border-bottom] {
-		border-bottom: 1px solid #ddd !important;
-	}
-
 	[bg-white] {
 		.toolbar-background {
 			background: #fff !important;
 		}
 	}
-
 }
 

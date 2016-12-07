@@ -19,6 +19,10 @@ column-with-more {
 				}
 			}
 		}
+
+		[border-bottom] {
+			border-bottom: 1px solid #ddd;
+		}
 	}
 
 	ion-content {
@@ -33,10 +37,6 @@ column-with-more {
 
 	[no-padding-bottom] {
 		padding-bottom: 0 !important;
-	}
-
-	[border-bottom] {
-		border-bottom: 1px solid #ddd;
 	}
 
 	[bg-white] {
