@@ -6,11 +6,11 @@
     </ion-item>
     <ion-item class="entry">
       <ion-label>账号 : </ion-label>
-      <ion-input [(ngModel)]="userInfo.userName" [ngModelOptions]="{standalone: true}" placeholder="请输入账号" type="text"></ion-input>
+      <ion-input [(ngModel)]="userInfoModel.userName" [ngModelOptions]="{standalone: true}" placeholder="请输入账号" type="text"></ion-input>
     </ion-item>
     <ion-item class="entry">
       <ion-label>密码 : </ion-label>
-      <ion-input [(ngModel)]="userInfo.passWord" [ngModelOptions]="{standalone: true}" placeholder="请输入密码" type="password"></ion-input>
+      <ion-input [(ngModel)]="userInfoModel.passWord" [ngModelOptions]="{standalone: true}" placeholder="请输入密码" type="password"></ion-input>
     </ion-item>
     <ion-item class="button-row">
       <button color="light" ion-button type="button" (click)="openRegist()" clear>注册</button>
