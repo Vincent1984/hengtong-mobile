@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController, NavParams, } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+
+import {ColumnInfoModel} from '../../models/column-info-model';
 
 @Component({
   selector: 'column-with-tab',
@@ -11,17 +13,16 @@ export class ColumnWithTabPage {
   selectedItem: any;
   icons: string[];
   items: Array<{ title: string, note: string, icon: string }>;
-  columnModel: any;
-  subColumns: any;
-  hasSubTab: any;
-  selectSubColumnId: any;
+  columnInfoModel: ColumnInfoModel;
+  hasNavTab: any;
+  selectedNavTabId: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.columnModel = navParams.data;
+    this.columnInfoModel = navParams.data;
     
-    if (this.columnModel.subColumns) {
-      this.hasSubTab = true;
-      this.selectSubColumnId = this.columnModel.subColumns[0].columnId;
+    if (this.columnInfoModel.navTabs) {
+      this.hasNavTab = true;
+      this.selectedNavTabId = this.columnInfoModel.navTabs[0].tabId;
     }
 
     this.items = [];
@@ -30,8 +31,8 @@ export class ColumnWithTabPage {
     }
   }
 
-  selectedSubTab(subColumn) {
-    this.selectSubColumnId = subColumn.columnId;
+  selectedSubTab(navTab) {
+    this.selectedNavTabId = navTab.tabId;
   }
 
   doRefresh(refresher) {

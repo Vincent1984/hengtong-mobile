@@ -23,7 +23,7 @@ export class LoginPage {
   }
 
   login() {
-    let promise = this.userInfoService.login(this.userInfoModel);
+    /*let promise = this.userInfoService.login(this.userInfoModel);
     if (promise) {
       promise.then(data => {
         if (0 == data.errorCode) {
@@ -31,6 +31,8 @@ export class LoginPage {
         }
       });
     }
+    }*/
+    this.navCtrl.push(TabsPage);
   }
 
   openRegist() {

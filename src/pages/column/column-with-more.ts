@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams, } from 'ionic-angular';
 
+import {ColumnInfoModel} from '../../models/column-info-model';
+
 @Component({
   selector: 'column-with-more',
   templateUrl: 'column-with-more.html'
@@ -11,10 +13,10 @@ export class ColumnWithMorePage {
   selectedItem: any;
   icons: string[];
   items: Array<{ title: string, note: string, icon: string }>;
-  columnModel: any;
+  columnInfoModel: ColumnInfoModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.columnModel = navParams.data;
+    this.columnInfoModel = navParams.data;
 
     this.items = [];
     for (var i = 0; i < 30; i++) {

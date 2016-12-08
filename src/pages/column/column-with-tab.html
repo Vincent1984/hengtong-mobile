@@ -5,13 +5,13 @@
         <ion-icon name="arrow-back" color="dark"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title text-center>{{columnModel.columnName}}</ion-title>
+    <ion-title text-center>{{columnInfoModel.columnName}}</ion-title>
   </ion-toolbar>
 
-  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom *ngIf="hasSubTab">
-    <ion-segment mode="md" color="dark" border-bottom [(ngModel)]="selectSubColumnId">
-      <ion-segment-button *ngFor="let subColumn of columnModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="selectedSubTab(subColumn)">
-        <span>{{subColumn.columnName}}</span>
+  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom *ngIf="hasNavTab">
+    <ion-segment mode="md" color="dark" border-bottom [(ngModel)]="selectedNavTabId">
+      <ion-segment-button *ngFor="let navTab of columnInfoModel.navTabs" value="{{navTab.tabId}}" (ionSelect)="selectedSubTab(navTab)">
+        <span>{{navTab.tabName}}</span>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
