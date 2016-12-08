@@ -1,31 +1,20 @@
-<!--<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>大连群众艺术馆</ion-title>
-  </ion-navbar>
-</ion-header>-->
-
-
 <ion-content scroll="false">
-    <form [formGroup]="todo" (ngSubmit)="loginForm()">
-      <ion-item class="header">
-        <img src="/assets/images/tab00_active.png" />
-        <h2>大连市群众艺术馆</h2>
-      </ion-item>
-      <ion-item class="entry">
-        <ion-label>账号 : </ion-label>
-        <ion-input placeholder="请输入账号" type="text" formControlName="name"></ion-input>
-      </ion-item>
-      <ion-item class="entry">
-        <ion-label>密码 : </ion-label>
-        <ion-input  placeholder="请输入密码" type="password" formControlName="password"></ion-input>
-      </ion-item>
-      <ion-item class="button-row">
-        <button color="light" ion-button type="button" (click)="openRegist()" clear>注册</button>
-        <button ion-button type="submit" >登陆</button>
-      </ion-item>
-    </form>
-
+  <form>
+    <ion-item class="header">
+      <img src="/assets/images/tab00_active.png" />
+      <h2>大连市群众艺术馆</h2>
+    </ion-item>
+    <ion-item class="entry">
+      <ion-label>账号 : </ion-label>
+      <ion-input [(ngModel)]="userInfo.userName" [ngModelOptions]="{standalone: true}" placeholder="请输入账号" type="text"></ion-input>
+    </ion-item>
+    <ion-item class="entry">
+      <ion-label>密码 : </ion-label>
+      <ion-input [(ngModel)]="userInfo.passWord" [ngModelOptions]="{standalone: true}" placeholder="请输入密码" type="password"></ion-input>
+    </ion-item>
+    <ion-item class="button-row">
+      <button color="light" ion-button type="button" (click)="openRegist()" clear>注册</button>
+      <button ion-button type="submit" (click)="login()">登陆</button>
+    </ion-item>
+  </form>
 </ion-content>

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-//import { HomePage } from '../home/index';
-import { MuseumHomePage } from '../museum-home/museum-home';
+import { HomePage } from '../home/home';
 
 import { ColumnWithTabPage } from '../column/column-with-tab';
 import { ColumnWithMorePage } from '../column/column-with-more';
@@ -15,7 +14,7 @@ export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
 
-  tab_00: any = MuseumHomePage;
+  tab_00: any = HomePage;
   tab_01: any = ColumnWithTabPage;
   tab_02: any = ColumnWithTabPage;
   tab_03: any = ColumnWithTabPage;

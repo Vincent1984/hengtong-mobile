@@ -3,10 +3,10 @@ import { NavController } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 
 @Component({
-  selector: 'page-museum-home',
-  templateUrl: 'museum-home.html'
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
-export class MuseumHomePage {
+export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
@@ -16,11 +16,12 @@ export class MuseumHomePage {
   mySlideOptions = {
     initialSlide: 0,
     loop: true,
-    pager:true
+    pager: true
   };
   @ViewChild('mySlider') slider: Slides;
 
   goToSlide() {
     this.slider.slideTo(2, 500);
   }
+
 }
