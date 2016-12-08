@@ -5,6 +5,7 @@ import { NavController } from 'ionic-angular';
 import { RegistPage } from '../regist/regist';
 import { TabsPage } from '../tabs/tabs';
 
+import { UserInfoModel } from "../../models/user-info-model";
 import { ResourceService } from "../../services/basic/resource-service";
 import { UserInfoService } from '../../services/business/user-info-service';
 
@@ -15,16 +16,17 @@ import { UserInfoService } from '../../services/business/user-info-service';
 })
 export class LoginPage {
 
-  userInfo = {};
+  userInfoModel: UserInfoModel;
 
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService) {
+    this.userInfoModel = new UserInfoModel();
   }
 
   login() {
-    let promise = this.userInfoService.login(this.userInfo);
+    let promise = this.userInfoService.login(this.userInfoModel);
     if (promise) {
-      promise.then(json => {
-        if (0 == json.errorCode) {
+      promise.then(data => {
+        if (0 == data.errorCode) {
           this.navCtrl.push(TabsPage);
         }
       });
