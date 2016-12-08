@@ -69,6 +69,7 @@ export class ResourceService {
       for (var k in query) {
         str += k + '=' + query[k] + '&';
       }
+      str = str.slice(0, -1);
     }
     return str;
   }
