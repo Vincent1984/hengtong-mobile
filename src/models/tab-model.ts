@@ -16,7 +16,7 @@ export class TabModel {
     let tab_02 = new TabModel(ColumnWithTabPage, '2', '讲堂', 'tab02', ColumnInfoModel.buildJT());
     let tab_03 = new TabModel(ColumnWithTabPage, '3', '专题', 'tab03', ColumnInfoModel.buildZT());
     let tab_04 = new TabModel(ColumnWithTabPage, '4', '其他', 'tab04', ColumnInfoModel.buildQT());
-    let tab_05 = new TabModel(SubTabsPage, '5', '我的', 'tab05', null);
+    let tab_05 = new TabModel(SubTabsPage, '5', '我的', 'tab05', ColumnInfoModel.buildWD());
 
     return [tab_00, tab_01, tab_02, tab_03, tab_04, tab_05];
   }
