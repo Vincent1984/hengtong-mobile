@@ -26,9 +26,9 @@ export class TabsPage {
 
   doSelected(tab) {
     if (ColumnType.MY == tab.columnInfoModel.columnType) {
-      if(this.storageService.read("hengtong-id")){
+      if (this.storageService.read("hengtong-id")) {
         this.navCtrl.push(SubTabsPage);
-      }else{
+      } else {
         this.navCtrl.push(LoginPage);
       }
     }
