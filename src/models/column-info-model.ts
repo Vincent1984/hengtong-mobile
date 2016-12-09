@@ -5,7 +5,6 @@ export class ColumnInfoModel {
   public static FYDT_ID = '8';  //非遗动态
   public static FYML_ID = '48';  //非遗名录
   public static FYGZ_ID = '47';  //非遗规章
-  public static TJNR_ID = '10';  //推荐内容
   public static WYJC_ID = '32';  //文苑集萃
   public static QXJT_ID = '43';  //群星讲堂
   public static QXJC_ID = '44';  //群星剧场

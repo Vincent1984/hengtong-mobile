@@ -17,13 +17,14 @@ export class RecommandInfoService {
     this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/favoriteList';
     this.pagingModel = new PagingModel<ContentInfoModel>(50, 1);
     this.imgQuery={'isImag':1};
+
   }
 
   /**
    * 置顶查询
    */
-  topList(columnId, count) {
-    return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + count + '/' + 1 , this.imgQuery).then(data => {
+  topList(count) {
+    return this.resourceService.doGet(this.apiUrl + '/' + count + '/' + 1 , this.imgQuery).then(data => {
       if (data.result) {
         let contentInfos: Array<ContentInfoModel>;
         contentInfos = [];
@@ -40,8 +41,8 @@ export class RecommandInfoService {
   /**
    * 栏目页分页查询
    */
-  list(columnId) {
-    return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + this.pagingModel.reqCount + '/' + this.pagingModel.startIndex, null).then(data => {
+  list() {
+    return this.resourceService.doGet(this.apiUrl + '/' + this.pagingModel.reqCount + '/' + this.pagingModel.startIndex, null).then(data => {
       if (data.result) {
         let contentInfos: Array<ContentInfoModel>;
         contentInfos = [];

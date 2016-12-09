@@ -63,7 +63,7 @@ export class HomePage {
       this.contentInfosFYGZ = contentInfos;
     });
 
-    // this.recommandInfoService.topList(ColumnInfoModel.TJNR_ID, this.record_num).then(contentInfos => {
+    // this.recommandInfoService.topList(this.record_num).then(contentInfos => {
     //   this.contentInfosTJNR = contentInfos;
     // });
   }
