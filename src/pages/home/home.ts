@@ -17,6 +17,7 @@ export class HomePage {
   @ViewChild('mySlider') slider: Slides;
 
   legacy: string = "puppies";
+  record_num : number;
 
   mySlideOptions = {
     initialSlide: 0,
@@ -28,6 +29,7 @@ export class HomePage {
   contentInfosFXDT: Array<ContentInfoModel>;
 
   constructor(public navCtrl: NavController, private contentInfoService: ContentInfoService) {
+    this.record_num = 3;
     this.findTopContents(8);
   }
 
@@ -36,7 +38,7 @@ export class HomePage {
   }
 
   findTopContents(columnId) {
-    this.contentInfoService.topList(columnId, 3).then(contentInfos => {
+    this.contentInfoService.topList(columnId, this.record_num).then(contentInfos => {
       this.contentInfosFXDT = contentInfos;
     });
   }

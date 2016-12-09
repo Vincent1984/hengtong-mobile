@@ -10,23 +10,25 @@ export class ColumnInfoModel {
   }
 
   public static buildFY() {
-    let subTab_00 = new NavTabModel('120', '非遗动态');
-    let subTab_01 = new NavTabModel('121', '非遗名录');
-    let subTab_02 = new NavTabModel('122', '非遗传承');
+    let subTab_00 = new NavTabModel('8', '非遗动态');
+    let subTab_01 = new NavTabModel('48', '非遗名录');
+    let subTab_02 = new NavTabModel('47', '非遗规章');
 
-    return new ColumnInfoModel(ColumnType.DEFAULT, '12', '非遗文化', [subTab_00, subTab_01, subTab_02]);
+    return new ColumnInfoModel(ColumnType.DEFAULT, '3000', '非遗文化', [subTab_00, subTab_01, subTab_02]);
   }
 
-  public static buildJT() {
-    return new ColumnInfoModel(ColumnType.DEFAULT, '22', '文化讲堂', null);
+  public static buildQK() {
+    let subTab_00 = new NavTabModel('32', '文苑集萃');
+    return new ColumnInfoModel(ColumnType.DEFAULT, '4000', '群文期刊', null);
   }
 
   public static buildZT() {
-    return  new ColumnInfoModel(ColumnType.DEFAULT, '23', '专题活动', null);
-  }
-
-  public static buildQT() {
-    return  new ColumnInfoModel(ColumnType.DEFAULT, '', '其他', null);
+    let subTab_00 = new NavTabModel('43', '群星讲堂');
+    let subTab_01 = new NavTabModel('44', '群星剧场');
+    let subTab_02 = new NavTabModel('51', '群星展厅');
+    let subTab_03 = new NavTabModel('50', '群星舞台');
+    let subTab_04 = new NavTabModel('52', '志愿者巡演');
+    return  new ColumnInfoModel(ColumnType.DEFAULT, '2000', '专题活动', null);
   }
 
   public static buildWD() {
