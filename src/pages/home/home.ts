@@ -7,11 +7,13 @@ import { ContentInfoModel } from "../../models/content-info-model";
 
 import { ResourceService } from "../../services/basic/resource-service";
 import { ContentInfoService } from '../../services/business/content-info-service';
+import { RecommandInfoService } from "../../services/business/recommand-info-service";
+import {TabsPage} from "../tabs/tabs";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [ResourceService, ContentInfoService]
+  providers: [ResourceService, ContentInfoService,RecommandInfoService]
 })
 export class HomePage {
 
@@ -27,9 +29,16 @@ export class HomePage {
   };
 
   // 非遗动态
-  contentInfosFXDT: Array<ContentInfoModel>;
+  contentInfosFYDT: Array<ContentInfoModel>;
+  // 非遗名录
+  contentInfosFYML: Array<ContentInfoModel>;
+  // 非遗规章
+  contentInfosFYGZ: Array<ContentInfoModel>;
 
-  constructor(public navCtrl: NavController, private contentInfoService: ContentInfoService) {
+  //推荐内容
+  contentInfosTJNR: Array<ContentInfoModel>;
+
+  constructor(public navCtrl: NavController, private contentInfoService: ContentInfoService, private recommandInfoService: RecommandInfoService) {
     this.record_num = 3;
     this.loadContents();
   }
@@ -40,12 +49,24 @@ export class HomePage {
 
   loadContents() {
     this.contentInfoService.topList(ColumnInfoModel.FYDT_ID, this.record_num).then(contentInfos => {
-      this.contentInfosFXDT = contentInfos;
+      this.contentInfosFYDT = contentInfos;
     });
-    
-    this.contentInfoService.topList(ColumnInfoModel.FYDT_ID, this.record_num).then(contentInfos => {
-      this.contentInfosFXDT = contentInfos;
+
+    this.contentInfoService.topList(ColumnInfoModel.FYML_ID, this.record_num).then(contentInfos => {
+      this.contentInfosFYML = contentInfos;
     });
+
+    this.contentInfoService.topList(ColumnInfoModel.FYGZ_ID, this.record_num).then(contentInfos => {
+      this.contentInfosFYGZ = contentInfos;
+    });
+
+    // this.recommandInfoService.topList(ColumnInfoModel.TJNR_ID, this.record_num).then(contentInfos => {
+    //   this.contentInfosTJNR = contentInfos;
+    // });
+  }
+
+  goToPage(columnId) {
+    this.navCtrl.push(TabsPage);
   }
 
 }

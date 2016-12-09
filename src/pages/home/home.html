@@ -27,44 +27,11 @@
       <img src="/assets/images/culture.jpg" />
     </div>
   </div>
-  <div class="segments" [ngStyle]="{'height': 'calc(61px + 2rem + '+3+'*(8rem + 16px))'}">
-    <ion-header>
-      <ion-toolbar no-border-top>
-        <ion-segment [(ngModel)]="legacy">
-          <ion-segment-button value="puppies">
-            <span>非遗动态</span>
-          </ion-segment-button>
-          <ion-segment-button value="kittens">
-            <span>非遗名录</span>
-          </ion-segment-button>
-          <ion-segment-button value="ducklings">
-            <span>非遗规章</span>
-          </ion-segment-button>
-        </ion-segment>
-      </ion-toolbar>
-    </ion-header>
 
-    <ion-content>
-      <div [ngSwitch]="legacy">
-        <ion-list *ngSwitchCase="'puppies'">
-          <ion-item *ngFor="let contentInfo of contentInfosFXDT">
-            <ion-thumbnail item-left>
-              <img src="{{contentInfo.imageName}}" />
-            </ion-thumbnail>
-            <h2>{{contentInfo.title}}</h2>
-            <p>{{contentInfo.content}}</p>
-          </ion-item>
-        </ion-list>
-      </div>
-      <div>
-        <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
-      </div>
-    </ion-content>
-  </div>
 
   <div class="compaign">
     <div class="compaign-head">
-      <h2>专题/活动</h2>
+      <h2>群文咨讯</h2>
       <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
     </div>
     <div class="compaign-content">
@@ -91,32 +58,73 @@
     </div>
   </div>
 
+  <div class="segments" [ngStyle]="{'height': 'calc(61px + 2rem + '+3+'*(8rem + 16px))'}">
+    <ion-header>
+      <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="legacy">
+          <ion-segment-button value="puppies">
+            <span>非遗动态</span>
+          </ion-segment-button>
+          <ion-segment-button value="kittens">
+            <span>非遗名录</span>
+          </ion-segment-button>
+          <ion-segment-button value="ducklings">
+            <span>非遗规章</span>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div [ngSwitch]="legacy">
+        <ion-list *ngSwitchCase="'puppies'">
+          <ion-item *ngFor="let contentInfo of contentInfosFYDT">
+            <ion-thumbnail item-left>
+              <img src="{{contentInfo.imageName}}" />
+            </ion-thumbnail>
+            <h2>{{contentInfo.title}}</h2>
+            <p>{{contentInfo.content}}</p>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'kittens'">
+          <ion-item *ngFor="let contentInfo of contentInfosFYML">
+            <ion-thumbnail item-left>
+              <img src="{{contentInfo.imageName}}" />
+            </ion-thumbnail>
+            <h2>{{contentInfo.title}}</h2>
+            <p>{{contentInfo.content}}</p>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'ducklings'">
+          <ion-item *ngFor="let contentInfo of contentInfosFYGZ">
+            <ion-thumbnail item-left>
+              <img src="{{contentInfo.imageName}}" />
+            </ion-thumbnail>
+            <h2>{{contentInfo.title}}</h2>
+            <p>{{contentInfo.content}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div>
+        <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
+      </div>
+    </ion-content>
+  </div>
+
+
+
   <div class="suggestion">
     <div class="suggestion-head">
       <h2>推荐内容</h2>
       <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
     </div>
     <ion-list>
-      <ion-item>
+      <ion-item  *ngFor="let contentInfo of contentInfosTJNR">
         <ion-thumbnail item-left>
-          <img src="/assets/images/culture.jpg" />
+          <img src="{{contentInfo.imageName}}" />
         </ion-thumbnail>
-        <h2>推荐内容推荐内容推荐内容</h2>
-        <p>推荐内容推荐内容推荐内容推1荐内容推荐内容推荐内容推1荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容</p>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="/assets/images/culture.jpg" />
-        </ion-thumbnail>
-        <h2>推荐内容推荐内容推荐内容</h2>
-        <p>推荐内容推荐内容推荐内容推1荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容</p>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="/assets/images/culture.jpg" />
-        </ion-thumbnail>
-        <h2>推荐内容推荐内容推荐内容</h2>
-        <p>推荐内容推荐内容推荐内容推1荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容推荐内容</p>
+        <h2>{{contentInfo.title}}</h2>
+        <p>{{contentInfo.content}}</p>
       </ion-item>
     </ion-list>
   </div>
