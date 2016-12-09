@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild, Host, forwardRef, Inject } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 
@@ -38,9 +38,12 @@ export class HomePage {
   //推荐内容
   contentInfosTJNR: Array<ContentInfoModel>;
 
-  constructor(public navCtrl: NavController, private contentInfoService: ContentInfoService, private recommandInfoService: RecommandInfoService) {
+  tabs: TabsPage;
+
+  constructor(@Host() @Inject(forwardRef(()=> TabsPage)) tabs : TabsPage, public navCtrl: NavController, private contentInfoService: ContentInfoService, private recommandInfoService: RecommandInfoService) {
     this.record_num = 3;
     this.loadContents();
+    this.tabs = tabs;
   }
 
   goToSlide() {
