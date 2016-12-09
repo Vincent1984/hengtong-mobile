@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 import { TabModel } from '../../models/tab-model';
 
 @Component({
-  selector: 'page-sub-tabs',
-  templateUrl: 'sub-tabs.html'
+  selector: 'page-myart-tabs',
+  templateUrl: 'myart-tabs.html'
 })
-export class SubTabsPage {
+export class MyArtTabsPage {
 
   tabs: Array<TabModel>;
 
   constructor() {
 
-    this.tabs = TabModel.buildSubTabs();
+    this.tabs = TabModel.buildMyArtTabs();
 
   }
 }

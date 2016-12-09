@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-import { SubTabsPage } from './sub-tabs';
+import { MyArtTabsPage } from '../myart-tabs/myart-tabs';
 
 import { TabModel } from '../../models/tab-model';
 import { ColumnType } from '../../models/column-info-model';
@@ -27,7 +27,7 @@ export class TabsPage {
   doSelected(tab) {
     if (ColumnType.MY == tab.columnInfoModel.columnType) {
       if (this.storageService.read("hengtong-id")) {
-        this.navCtrl.push(SubTabsPage);
+        this.navCtrl.push(MyArtTabsPage);
       } else {
         this.navCtrl.push(LoginPage);
       }

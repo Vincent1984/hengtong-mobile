@@ -3,7 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { SubTabsPage } from '../pages/tabs/sub-tabs';
+import { MyArtTabsPage } from '../pages/myart-tabs/myart-tabs';
 import { HomePage } from '../pages/home/home';
 import { ColumnWithTabPage } from '../pages/column/column-with-tab';
 import { ColumnWithMorePage } from '../pages/column/column-with-more';
@@ -16,7 +16,7 @@ import { RegistPage } from '../pages/regist/regist';
     ColumnWithTabPage,
     ColumnWithMorePage,
     TabsPage,
-    SubTabsPage,
+    MyArtTabsPage,
     HomePage,
     LoginPage,
     RegistPage
@@ -37,7 +37,7 @@ import { RegistPage } from '../pages/regist/regist';
     ColumnWithTabPage,
     ColumnWithMorePage,
     TabsPage,
-    SubTabsPage,
+    MyArtTabsPage,
     HomePage,
     LoginPage,
     RegistPage
