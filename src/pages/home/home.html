@@ -12,19 +12,19 @@
   </ion-slides>
   <div class="thumb-image">
     <div class="cell">
-      <img src="/assets/images/culture.jpg" />
+      <img (click)="tabs.goSelected(1)" src="/assets/images/culture.jpg" />
     </div>
     <div class="cell">
-      <img src="/assets/images/culture.jpg" />
+      <img (click)="tabs.goSelected(1)" src="/assets/images/culture.jpg" />
     </div>
     <div class="cell">
-      <img src="/assets/images/culture.jpg" />
+      <img (click)="tabs.goSelected(1)" src="/assets/images/culture.jpg" />
     </div>
     <div class="cell">
-      <img src="/assets/images/culture.jpg" />
+      <img (click)="tabs.goSelected(1)" src="/assets/images/culture.jpg" />
     </div>
     <div class="cell">
-      <img src="/assets/images/culture.jpg" />
+      <img (click)="tabs.goSelected(1)" src="/assets/images/culture.jpg" />
     </div>
   </div>
 
@@ -32,7 +32,7 @@
   <div class="compaign">
     <div class="compaign-head">
       <h2>群文咨讯</h2>
-      <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
+      <a href="javascript:" class="readmore" (click)="tabs.goSelected(3)">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
     </div>
     <div class="compaign-content">
       <div class="compaign-row">
@@ -106,7 +106,7 @@
         </ion-list>
       </div>
       <div>
-        <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down" (click)="tabs.goSelected(1)"></ion-icon></a>
+        <a href="javascript:" class="readmore" (click)="tabs.goSelected(2)">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down" ></ion-icon></a>
       </div>
     </ion-content>
   </div>

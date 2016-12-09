@@ -3,10 +3,14 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import {ColumnInfoModel} from '../../models/column-info-model';
+import { ContentInfoService } from '../../services/business/content-info-service';
+import { ResourceService } from "../../services/basic/resource-service";
+import { ContentInfoModel } from "../../models/content-info-model";
 
 @Component({
   selector: 'column-with-tab',
-  templateUrl: 'column-with-tab.html'
+  templateUrl: 'column-with-tab.html',
+  providers: [ResourceService, ContentInfoService]
 })
 export class ColumnWithTabPage {
 
@@ -16,23 +20,34 @@ export class ColumnWithTabPage {
   columnInfoModel: ColumnInfoModel;
   hasNavTab: any;
   selectedNavTabId: any;
+  record_num : number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  //内容列表
+  contentInfos: Array<ContentInfoModel>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private contentInfoService: ContentInfoService ) {
     this.columnInfoModel = navParams.data;
-    
-    if (this.columnInfoModel.navTabs) {
-      this.hasNavTab = true;
-      this.selectedNavTabId = this.columnInfoModel.navTabs[0].tabId;
-    }
+    this.record_num = 20;
 
     this.items = [];
     for (var i = 0; i < 30; i++) {
       this.items.push({ title: 'test', note: 'test', icon: 'http://d.ifengimg.com/q75/img1.ugc.ifeng.com/newugc/20161124/image/17/201_0gZKL05e08c_watermark0gZK2bN007O.jpg' });
     }
+
+    if (this.columnInfoModel.navTabs) {
+      this.hasNavTab = true;
+      this.selectedNavTabId = this.columnInfoModel.navTabs[0].tabId;
+
+      this.loadFirstContents(this.columnInfoModel.navTabs[0].tabId);
+    }
+
   }
 
   selectedSubTab(navTab) {
     this.selectedNavTabId = navTab.tabId;
+    this.contentInfoService.topList(this.selectedNavTabId, this.record_num).then(contentInfos => {
+      this.contentInfos = contentInfos;
+    });
   }
 
   doRefresh(refresher) {
@@ -48,6 +63,12 @@ export class ColumnWithTabPage {
       console.log('Async operation has ended');
       infiniteScroll.complete();
     }, 500);
+  }
+
+  loadFirstContents(tabId){
+      this.contentInfoService.topList(tabId, this.record_num).then(contentInfos => {
+        this.contentInfos = contentInfos;
+      });
   }
 
 }
