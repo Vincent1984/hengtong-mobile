@@ -2,6 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 
+import { ColumnInfoModel } from "../../models/column-info-model";
 import { ContentInfoModel } from "../../models/content-info-model";
 
 import { ResourceService } from "../../services/basic/resource-service";
@@ -30,15 +31,19 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private contentInfoService: ContentInfoService) {
     this.record_num = 3;
-    this.findTopContents(8);
+    this.loadContents();
   }
 
   goToSlide() {
     this.slider.slideTo(2, 500);
   }
 
-  findTopContents(columnId) {
-    this.contentInfoService.topList(columnId, this.record_num).then(contentInfos => {
+  loadContents() {
+    this.contentInfoService.topList(ColumnInfoModel.FYDT_ID, this.record_num).then(contentInfos => {
+      this.contentInfosFXDT = contentInfos;
+    });
+    
+    this.contentInfoService.topList(ColumnInfoModel.FYDT_ID, this.record_num).then(contentInfos => {
       this.contentInfosFXDT = contentInfos;
     });
   }

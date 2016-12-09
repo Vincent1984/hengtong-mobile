@@ -2,6 +2,10 @@ import { NavTabModel } from './nav-tab-model';
 
 export class ColumnInfoModel {
 
+  public static FYDT_ID = '8';
+  public static FYML_ID = '48';
+  public static FYGZ_ID = '47';
+
   constructor(public columnType: ColumnType, public columnId: string, public columnName: string, public navTabs: Array<NavTabModel>) {
   }
 
@@ -10,9 +14,9 @@ export class ColumnInfoModel {
   }
 
   public static buildFY() {
-    let subTab_00 = new NavTabModel('8', '非遗动态');
-    let subTab_01 = new NavTabModel('48', '非遗名录');
-    let subTab_02 = new NavTabModel('47', '非遗规章');
+    let subTab_00 = new NavTabModel(ColumnInfoModel.FYDT_ID, '非遗动态');
+    let subTab_01 = new NavTabModel(ColumnInfoModel.FYML_ID, '非遗名录');
+    let subTab_02 = new NavTabModel(ColumnInfoModel.FYGZ_ID, '非遗规章');
 
     return new ColumnInfoModel(ColumnType.DEFAULT, '3000', '非遗文化', [subTab_00, subTab_01, subTab_02]);
   }
