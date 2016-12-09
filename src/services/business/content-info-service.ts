@@ -17,6 +17,9 @@ export class ContentInfoService {
     this.pagingModel = new PagingModel<ContentInfoModel>(50, 1);
   }
 
+  /**
+   * 置顶查询
+   */
   topList(columnId, count) {
     return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + count + '/' + 1, null).then(data => {
       if (data.result) {
@@ -32,6 +35,9 @@ export class ContentInfoService {
     });
   }
 
+  /**
+   * 栏目页分页查询
+   */
   list(columnId) {
     return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + this.pagingModel.reqCount + '/' + this.pagingModel.startIndex, null).then(data => {
       if (data.result) {
