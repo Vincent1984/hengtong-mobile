@@ -28,7 +28,7 @@ export class LoginPage {
     if (promise) {
       promise.then(data => {
         if (0 == data.errorCode) {
-          this.storageService.write("hengtong-id",data.result[0]);
+          this.storageService.write("hengtong-id",data.result[0].userId);
           this.navCtrl.push(TabsPage);
         }
       });
