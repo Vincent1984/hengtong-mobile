@@ -6,16 +6,19 @@ import { SubTabsPage } from './sub-tabs';
 
 import { TabModel } from '../../models/tab-model';
 import { ColumnType } from '../../models/column-info-model';
+import { StorageService } from '../../services/basic/storage-service';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-tabs',
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  providers: [StorageService]
 })
 export class TabsPage {
 
   tabs: Array<TabModel>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private storageService: StorageService) {
 
     this.tabs = TabModel.buildTabs();
 
@@ -23,7 +26,11 @@ export class TabsPage {
 
   doSelected(tab) {
     if (ColumnType.MY == tab.columnInfoModel.columnType) {
-      this.navCtrl.push(SubTabsPage);
+      if(this.storageService.read("hengtong-id")){
+        this.navCtrl.push(SubTabsPage);
+      }else{
+        this.navCtrl.push(LoginPage);
+      }
     }
   }
 

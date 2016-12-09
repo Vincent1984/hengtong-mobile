@@ -13,7 +13,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = LoginPage;
+  rootPage = TabsPage;
   pages: Array<{ title: string, component: any }>;
 
   constructor(platform: Platform, public menu: MenuController) {

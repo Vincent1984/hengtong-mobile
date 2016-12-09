@@ -8,17 +8,18 @@ import { TabsPage } from '../tabs/tabs';
 import { UserInfoModel } from "../../models/user-info-model";
 import { ResourceService } from "../../services/basic/resource-service";
 import { UserInfoService } from '../../services/business/user-info-service';
+import { StorageService } from '../../services/basic/storage-service';
 
 @Component({
   selector: 'login-page',
   templateUrl: 'login.html',
-  providers: [ResourceService, UserInfoService]
+  providers: [ResourceService, UserInfoService,StorageService]
 })
 export class LoginPage {
 
   userInfoModel: UserInfoModel;
 
-  constructor(public navCtrl: NavController, private userInfoService: UserInfoService) {
+  constructor(public navCtrl: NavController, private userInfoService: UserInfoService, private storageService: StorageService) {
     this.userInfoModel = new UserInfoModel();
   }
 
@@ -27,6 +28,7 @@ export class LoginPage {
     if (promise) {
       promise.then(data => {
         if (0 == data.errorCode) {
+          this.storageService.write("hengtong-id",data.result[0]);
           this.navCtrl.push(TabsPage);
         }
       });

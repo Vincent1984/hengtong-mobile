@@ -10,7 +10,7 @@ export class ColumnInfoService {
   pageNum: any;
 
   constructor(private resourceService: ResourceService) {
-    this.apiUrl = 'http://192.168.2.7:8080/web/commonContent/list';
+    this.apiUrl = 'http://192.168.2.7:8080/dlqzysgweb/web/commonContent/list';
     this.pageSize = 10;
     this.pageNum = 1;
   }

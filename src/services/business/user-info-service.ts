@@ -8,7 +8,7 @@ export class UserInfoService {
   apiUrl: string;
 
   constructor(private resourceService: ResourceService) {
-    this.apiUrl = 'http://218.61.0.14:8080/web/users/userLogin';
+    this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/users/userLogin';
   }
 
   login(userInfo) {
