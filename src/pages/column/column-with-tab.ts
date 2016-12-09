@@ -6,6 +6,7 @@ import {ColumnInfoModel} from '../../models/column-info-model';
 import { ContentInfoService } from '../../services/business/content-info-service';
 import { ResourceService } from "../../services/basic/resource-service";
 import { ContentInfoModel } from "../../models/content-info-model";
+import {ItemDetailsPage} from "../item-details/item-details";
 
 @Component({
   selector: 'column-with-tab',
@@ -30,9 +31,9 @@ export class ColumnWithTabPage {
     this.record_num = 20;
 
     this.items = [];
-    for (var i = 0; i < 30; i++) {
-      this.items.push({ title: 'test', note: 'test', icon: 'http://d.ifengimg.com/q75/img1.ugc.ifeng.com/newugc/20161124/image/17/201_0gZKL05e08c_watermark0gZK2bN007O.jpg' });
-    }
+    // for (var i = 0; i < 30; i++) {
+    //   this.items.push({ title: 'test', note: 'test', icon: 'http://d.ifengimg.com/q75/img1.ugc.ifeng.com/newugc/20161124/image/17/201_0gZKL05e08c_watermark0gZK2bN007O.jpg' });
+    // }
 
     if (this.columnInfoModel.navTabs) {
       this.hasNavTab = true;
@@ -41,6 +42,7 @@ export class ColumnWithTabPage {
       this.loadFirstContents(this.columnInfoModel.navTabs[0].tabId);
     }
 
+    this.selectedItem = navParams.get('item');
   }
 
   selectedSubTab(navTab) {
@@ -70,5 +72,12 @@ export class ColumnWithTabPage {
         this.contentInfos = contentInfos;
       });
   }
+
+  itemTapped(event, item) {
+    this.navCtrl.push(ItemDetailsPage, {
+      item: item
+    });
+  }
+
 
 }

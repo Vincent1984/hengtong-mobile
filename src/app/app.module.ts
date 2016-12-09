@@ -9,6 +9,7 @@ import { ColumnWithTabPage } from '../pages/column/column-with-tab';
 import { ColumnWithMorePage } from '../pages/column/column-with-more';
 import { LoginPage } from '../pages/login/login';
 import { RegistPage } from '../pages/regist/regist';
+import {ItemDetailsPage} from "../pages/item-details/item-details";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistPage } from '../pages/regist/regist';
     MyArtTabsPage,
     HomePage,
     LoginPage,
-    RegistPage
+    RegistPage,
+    ItemDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -40,7 +42,8 @@ import { RegistPage } from '../pages/regist/regist';
     MyArtTabsPage,
     HomePage,
     LoginPage,
-    RegistPage
+    RegistPage,
+    ItemDetailsPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

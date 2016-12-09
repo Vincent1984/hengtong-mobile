@@ -27,14 +27,15 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-list-header *ngFor="let contentInfo of contentInfos">
+    <ion-list-header *ngFor="let item of contentInfos" (click)="itemTapped($event, item)">
       <ion-thumbnail item-left>
-        <img src="{{contentInfo.imageName}}" alt="" />
+        <img src="{{item.imageName}}" alt="" />
       </ion-thumbnail >
-      <h2>{{contentInfo.title}}</h2>
-      <p>{{contentInfo.content}}</p>
+      <h2>{{item.title}}</h2>
+      <p>{{item.content}}</p>
     </ion-list-header>
   </ion-list>
+
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
