@@ -29,13 +29,13 @@
       <ion-toolbar no-border-top>
         <ion-segment [(ngModel)]="legacy">
           <ion-segment-button value="puppies">
-            非遗动态
+            <span>非遗动态</span>
           </ion-segment-button>
           <ion-segment-button value="kittens">
-            非遗名录
+            <span>非遗名录</span>
           </ion-segment-button>
           <ion-segment-button value="ducklings">
-            非遗传承
+            <span>非遗传承</span>
           </ion-segment-button>
         </ion-segment>
       </ion-toolbar>
@@ -44,72 +44,12 @@
     <ion-content>
       <div [ngSwitch]="legacy">
         <ion-list *ngSwitchCase="'puppies'">
-          <ion-item>
+          <ion-item *ngFor="let contentInfo of contentInfosFXDT">
             <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
+              <img src="{{contentInfo.imageName}}" />
             </ion-thumbnail>
-            <h2>非物质文化遗产名录代表性传承</h2>
-            <p>非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承</p>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>非物质文化遗产名录代表性传承</h2>
-            <p>非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承</p>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>非物质文化遗产名录代表性传承</h2>
-            <p>非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承非物质文化遗产名录代表性传承</p>
-          </ion-item>
-        </ion-list>
-        <ion-list *ngSwitchCase="'kittens'">
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
-          </ion-item>
-        </ion-list>
-        <ion-list *ngSwitchCase="'ducklings'">
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="/assets/images/culture.jpg" />
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            <p>DaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffyDaffy</p>
+            <h2>{{contentInfo.title}}</h2>
+            <p>{{contentInfo.content}}</p>
           </ion-item>
         </ion-list>
       </div>

@@ -17,6 +17,13 @@ export class ResourceService {
     return this.http.get(url + this.queryToString(query), options)
                     .toPromise()
                     .then(res => res.json())
+                    .then(data => {
+                      if (0 == data.errorCode) {
+                        return data;
+                      } else {
+                        console.log('the error info is ' + data.errorMsg);
+                      }
+                    })
                     .catch(err => {
                       this.handleError(err);
                     });
@@ -29,6 +36,13 @@ export class ResourceService {
     return this.http.post(url + this.queryToString(query), body, options)
                     .toPromise()
                     .then(res => res.json())
+                    .then(data => {
+                      if (0 == data.errorCode) {
+                        return data;
+                      } else {
+                        console.log('the error info is ' + data.errorMsg);
+                      }
+                    })
                     .catch(err => {
                       this.handleError(err);
                     });
@@ -41,6 +55,13 @@ export class ResourceService {
     return this.http.put(url + this.queryToString(query), body, options)
                     .toPromise()
                     .then(res => res.json())
+                    .then(data => {
+                      if (0 == data.errorCode) {
+                        return data;
+                      } else {
+                        console.log('the error info is ' + data.errorMsg);
+                      }
+                    })
                     .catch(err => {
                       this.handleError(err);
                     });
@@ -53,6 +74,13 @@ export class ResourceService {
     return this.http.delete(url + this.queryToString(query), options)
                     .toPromise()
                     .then(res => res.json())
+                    .then(data => {
+                      if (0 == data.errorCode) {
+                        return data;
+                      } else {
+                        console.log('the error info is ' + data.errorMsg);
+                      }
+                    })
                     .catch(err => {
                       this.handleError(err);
                     });
