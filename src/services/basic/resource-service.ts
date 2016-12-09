@@ -12,7 +12,7 @@ export class ResourceService {
 
   public doGet(url: string, query: any) {
     var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
     let options = new RequestOptions({ headers: headers });
     return this.http.get(url + this.queryToString(query), options)
                     .toPromise()
@@ -24,7 +24,7 @@ export class ResourceService {
 
   public doPost(url: string, body: any, query: any) {
     var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
     let options = new RequestOptions({ headers: headers });
     return this.http.post(url + this.queryToString(query), body, options)
                     .toPromise()
