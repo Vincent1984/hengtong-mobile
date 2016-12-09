@@ -9,10 +9,12 @@
 
 <ion-content>
  <div *ngIf="selectedItem" class="selection">
-    <b>{{selectedItem.title}}</b>
-    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedItem.title}}</b>
+    <div >
+     <h1 >{{selectedItem.title}}</h1>
     </div>
+    <span>{{selectedItem.addDate}}</span>
+    <span>{{selectedItem.subTitle}}</span>
+    <hr />
+
   </div>
 </ion-content>
