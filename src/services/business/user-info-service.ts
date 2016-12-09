@@ -5,14 +5,20 @@ import { ResourceService } from "../basic/resource-service";
 @Injectable()
 export class UserInfoService {
 
-  apiUrl: string;
+  apiLogin: string;
+  apiRegist: string;
 
   constructor(private resourceService: ResourceService) {
-    this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/users/userLogin';
+    this.apiLogin = 'http://218.61.0.14:8080/dlqzysgweb/web/users/userLogin';
+    this.apiRegist = 'http://218.61.0.14:8080/dlqzysgweb/web/users/register';
   }
 
   login(userInfo) {
-    return this.resourceService.doGet(this.apiUrl, userInfo);
+    return this.resourceService.doGet(this.apiLogin, userInfo);
+  }
+
+  regist(userInfo) {
+    return this.resourceService.doPost(this.apiRegist, userInfo, null);
   }
 
 }

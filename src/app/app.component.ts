@@ -3,11 +3,12 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
 import { RegistPage } from '../pages/regist/regist';
+import {StorageService} from "../services/basic/storage-service";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [StorageService]
 })
 export class MyApp {
 
@@ -16,7 +17,7 @@ export class MyApp {
   rootPage = TabsPage;
   pages: Array<{ title: string, component: any }>;
 
-  constructor(platform: Platform, public menu: MenuController) {
+  constructor(platform: Platform, public menu: MenuController,private storageService: StorageService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -37,4 +38,10 @@ export class MyApp {
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }
+
+  quit() {
+    this.storageService.remove("hengtong-id");
+    this.nav.setRoot(TabsPage);
+  }
+
 }

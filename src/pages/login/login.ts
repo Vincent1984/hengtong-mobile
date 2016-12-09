@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { RegistPage } from '../regist/regist';
-import { TabsPage } from '../tabs/tabs';
 
 import { UserInfoModel } from "../../models/user-info-model";
 import { ResourceService } from "../../services/basic/resource-service";
 import { UserInfoService } from '../../services/business/user-info-service';
 import { StorageService } from '../../services/basic/storage-service';
+import {MyArtTabsPage} from "../myart-tabs/myart-tabs";
 
 @Component({
   selector: 'login-page',
@@ -29,7 +29,7 @@ export class LoginPage {
       promise.then(data => {
         if (0 == data.errorCode) {
           this.storageService.write("hengtong-id",data.result[0].userId);
-          this.navCtrl.push(TabsPage);
+          this.navCtrl.push(MyArtTabsPage);
         }
       });
     }
