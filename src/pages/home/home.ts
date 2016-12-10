@@ -89,9 +89,9 @@ export class HomePage {
       this.contentInfosFYGZ = this.dealWithImgPath(contentInfos);
     });
 
-    // this.recommandInfoService.topList(this.record_num).then(contentInfos => {
-    //   this.contentInfosTJNR = this.dealWithImgPath(contentInfos);
-    // });
+    this.recommandInfoService.topList(this.record_num).then(contentInfos => {
+      this.contentInfosTJNR = this.dealWithImgPath(contentInfos);
+    });
   }
 
   goToPage(columnId) {

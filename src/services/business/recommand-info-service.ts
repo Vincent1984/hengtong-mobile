@@ -14,7 +14,7 @@ export class RecommandInfoService {
   imgQuery: {};
 
   constructor(private resourceService: ResourceService) {
-    this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/favoriteList';
+    this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/favoriteList';
     this.pagingModel = new PagingModel<ContentInfoModel>(50, 1);
     this.imgQuery={'isImag':1};
 
