@@ -12,11 +12,13 @@ export class ContentInfoService {
   apiUrl: string;
   pagingModel: PagingModel<ContentInfoModel>;
   imgQuery: {};
+  allQuery: {};
 
   constructor(private resourceService: ResourceService) {
     this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/list';
     this.pagingModel = new PagingModel<ContentInfoModel>(50, 1);
     this.imgQuery={'isImag':1};
+    this.allQuery={'isImag':0};
   }
 
   /**
@@ -59,7 +61,7 @@ export class ContentInfoService {
    * 栏目页分页查询
    */
   list(columnId) {
-    return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + this.pagingModel.reqCount + '/' + this.pagingModel.startIndex, null).then(data => {
+    return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + this.pagingModel.reqCount + '/' + this.pagingModel.startIndex, this.allQuery).then(data => {
       if (data.result) {
         let contentInfos: Array<ContentInfoModel>;
         contentInfos = [];
