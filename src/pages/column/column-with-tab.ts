@@ -69,7 +69,7 @@ export class ColumnWithTabPage {
 
   loadFirstContents(tabId){
       this.contentInfoService.topList(tabId, this.record_num).then(contentInfos => {
-        this.contentInfos = contentInfos;
+        this.contentInfos = this.dealWithImgPath(contentInfos);
       });
   }
 
@@ -78,6 +78,11 @@ export class ColumnWithTabPage {
       item: item
     });
   }
-
+  dealWithImgPath(contentInfos) {
+    for (var i = 0; i < contentInfos.length; i++) {
+      contentInfos[i].imgName="http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/"+contentInfos[i].imgName;
+    }
+    return contentInfos;
+  }
 
 }
