@@ -31,6 +31,8 @@ export class RegistPage {
             if (0 == data.errorCode) {
               this.storageService.write("hengtong-id",data.result[0].userId);
               this.navCtrl.push(MyArtTabsPage);
+            }else{
+              alert(data.errorMsg);
             }
           });
         }

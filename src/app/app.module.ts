@@ -13,6 +13,7 @@ import {ItemDetailsPage} from "../pages/item-details/item-details";
 import {PushListPage} from "../pages/push-list/push-list";
 import {MessagePage} from "../pages/message/message";
 import {PushDetailPage} from "../pages/push-list/push-detail";
+import {VersionPage} from "../pages/version/version";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {PushDetailPage} from "../pages/push-list/push-detail";
     ItemDetailsPage,
     PushListPage,
     MessagePage,
-    PushDetailPage
+    PushDetailPage,
+    VersionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -52,7 +54,8 @@ import {PushDetailPage} from "../pages/push-list/push-detail";
     ItemDetailsPage,
     PushListPage,
     MessagePage,
-    PushDetailPage
+    PushDetailPage,
+    VersionPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
