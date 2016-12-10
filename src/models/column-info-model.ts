@@ -11,6 +11,7 @@ export class ColumnInfoModel {
   public static QXZT_ID = '51';  //群星展厅
   public static QXWT_ID = '50';  //群星舞台
   public static XYZXY_ID = '52';  //志愿者巡演
+  public static QWZX_ID = '12'; //群文资讯
 
   constructor(public columnType: ColumnType, public columnId: string, public columnName: string, public navTabs: Array<NavTabModel>) {
   }

@@ -22,12 +22,22 @@ export class HomePage {
 
   legacy: string = "puppies";
   record_num : number;
+  qwzx_start1: number;
+  qwzx_start2: number;
+  qwzx_num: number;
 
   mySlideOptions = {
     initialSlide: 0,
     loop: true,
     pager: true
   };
+
+  //轮播图
+  contentInfosBANNER: Array<ContentInfoModel>;
+
+  //群文资讯
+  contentInfosQWZX1: Array<ContentInfoModel>;
+  contentInfosQWZX2: Array<ContentInfoModel>;
 
   // 非遗动态
   contentInfosFYDT: Array<ContentInfoModel>;
@@ -43,6 +53,9 @@ export class HomePage {
 
   constructor(@Host() @Inject(forwardRef(()=> TabsPage)) tabs : TabsPage, public navCtrl: NavController, private contentInfoService: ContentInfoService, private recommandInfoService: RecommandInfoService) {
     this.record_num = 3;
+    this.qwzx_start1 = 4;
+    this.qwzx_start2 = 6;
+    this.qwzx_num = 2;
     this.loadContents();
     this.tabs = tabs;
   }
@@ -52,9 +65,20 @@ export class HomePage {
   }
 
   loadContents() {
+
+    this.contentInfoService.topList(ColumnInfoModel.QWZX_ID, this.record_num).then(contentInfos => {
+      this.contentInfosBANNER = this.dealWithImgPath(contentInfos);
+    });
+
+    this.contentInfoService.topStartList(ColumnInfoModel.QWZX_ID, this.qwzx_num, this.qwzx_start1).then(contentInfos => {
+      this.contentInfosQWZX1 = this.dealWithImgPath(contentInfos);
+    });
+    this.contentInfoService.topStartList(ColumnInfoModel.QWZX_ID, this.qwzx_num, this.qwzx_start2).then(contentInfos => {
+      this.contentInfosQWZX2 = this.dealWithImgPath(contentInfos);
+    });
+
     this.contentInfoService.topList(ColumnInfoModel.FYDT_ID, this.record_num).then(contentInfos => {
       this.contentInfosFYDT = this.dealWithImgPath(contentInfos);
-
     });
 
     this.contentInfoService.topList(ColumnInfoModel.FYML_ID, this.record_num).then(contentInfos => {
@@ -66,8 +90,7 @@ export class HomePage {
     });
 
     // this.recommandInfoService.topList(this.record_num).then(contentInfos => {
-    //   this.dealWithImgPath(contentInfos);
-    //   this.contentInfosTJNR = contentInfos;
+    //   this.contentInfosTJNR = this.dealWithImgPath(contentInfos);
     // });
   }
 

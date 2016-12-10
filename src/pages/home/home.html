@@ -4,15 +4,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-slides #mySlider [options]="mySlideOptions">
-    <ion-slide>
-      <img src="/assets/images/culture.jpg" />
-    </ion-slide>
-    <ion-slide>
-      <img src="/assets/images/culture.jpg" />
-    </ion-slide>
-    <ion-slide>
-      <img src="/assets/images/culture.jpg" />
+  <ion-slides #mySlider [options]="mySlideOptions" >
+    <ion-slide *ngFor="let contentInfo of contentInfosBANNER">
+      <img src="{{contentInfo.imgName}}" />
     </ion-slide>
   </ion-slides>
   <div class="thumb-image">
@@ -41,23 +35,15 @@
     </div>
     <div class="compaign-content">
       <div class="compaign-row">
-        <div class="compaign-cell">
-          <img src="/assets/images/culture.jpg" />
-          <p>"群星剧场"纪念长征胜利80周年演唱会</p>
-        </div>
-        <div class="compaign-cell">
-          <img src="/assets/images/culture.jpg" />
-          <p>"群星剧场"纪念长征胜利80周年演唱会</p>
+        <div class="compaign-cell" *ngFor="let contentInfo of  contentInfosQWZX1" (click)="itemTapped($event, contentInfo)">
+          <img src="{{contentInfo.imgName}}" />
+          <p>{{contentInfo.title}}</p>
         </div>
       </div>
-      <div class="compaign-row">
-        <div class="compaign-cell">
-          <img src="/assets/images/culture.jpg" />
-          <p>"群星剧场"纪念长征胜利80周年演唱会</p>
-        </div>
-        <div class="compaign-cell">
-          <img src="/assets/images/culture.jpg" />
-          <p>"群星剧场"纪念长征胜利80周年演唱会</p>
+      <div class="compaign-row" >
+        <div class="compaign-cell" *ngFor="let contentInfo of  contentInfosQWZX2" (click)="itemTapped($event, contentInfo)">
+          <img src="{{contentInfo.imgName}}" />
+          <p>{{contentInfo.title}}</p>
         </div>
       </div>
     </div>

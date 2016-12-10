@@ -38,6 +38,24 @@ export class ContentInfoService {
   }
 
   /**
+   * 从哪开始查询
+   */
+  topStartList(columnId, count,startIndex) {
+    return this.resourceService.doGet(this.apiUrl + '/' + columnId + '/' + count + '/' + startIndex , this.imgQuery).then(data => {
+      if (data.result) {
+        let contentInfos: Array<ContentInfoModel>;
+        contentInfos = [];
+        for (let i in data.result) {
+          let contentInfo = new ContentInfoModel();
+          Object.assign(contentInfo, data.result[i]);
+          contentInfos.push(contentInfo);
+        }
+        return contentInfos;
+      }
+    });
+  }
+
+  /**
    * 栏目页分页查询
    */
   list(columnId) {
