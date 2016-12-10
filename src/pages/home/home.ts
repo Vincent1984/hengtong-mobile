@@ -52,18 +52,20 @@ export class HomePage {
 
   loadContents() {
     this.contentInfoService.topList(ColumnInfoModel.FYDT_ID, this.record_num).then(contentInfos => {
-      this.contentInfosFYDT = contentInfos;
+      this.contentInfosFYDT = this.dealWithImgPath(contentInfos);
+
     });
 
     this.contentInfoService.topList(ColumnInfoModel.FYML_ID, this.record_num).then(contentInfos => {
-      this.contentInfosFYML = contentInfos;
+      this.contentInfosFYML = this.dealWithImgPath(contentInfos);
     });
 
     this.contentInfoService.topList(ColumnInfoModel.FYGZ_ID, this.record_num).then(contentInfos => {
-      this.contentInfosFYGZ = contentInfos;
+      this.contentInfosFYGZ = this.dealWithImgPath(contentInfos);
     });
 
     // this.recommandInfoService.topList(this.record_num).then(contentInfos => {
+    //   this.dealWithImgPath(contentInfos);
     //   this.contentInfosTJNR = contentInfos;
     // });
   }
@@ -71,5 +73,10 @@ export class HomePage {
   goToPage(columnId) {
     this.navCtrl.push(TabsPage);
   }
-
+  dealWithImgPath(contentInfos) {
+    for (var i = 0; i < contentInfos.length; i++) {
+      contentInfos[i].imgName="http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/"+contentInfos[i].imgName;
+    }
+    return contentInfos;
+  }
 }
