@@ -3,7 +3,7 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>详细信息</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,8 +15,7 @@
     <span>{{selectedItem.addDate}}</span>
     <span>{{selectedItem.subTitle}}</span>
     <hr />
-   <div #child>
-     {{selectedItem.content}}
+   <div [innerHTML]="selectedItem.content">
    </div>
   </div>
 </ion-content>
