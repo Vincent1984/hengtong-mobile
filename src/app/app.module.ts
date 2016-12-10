@@ -10,6 +10,7 @@ import { ColumnWithMorePage } from '../pages/column/column-with-more';
 import { LoginPage } from '../pages/login/login';
 import { RegistPage } from '../pages/regist/regist';
 import {ItemDetailsPage} from "../pages/item-details/item-details";
+import {PushListPage} from "../pages/push-list/push-list";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ItemDetailsPage} from "../pages/item-details/item-details";
     HomePage,
     LoginPage,
     RegistPage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    PushListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -43,7 +45,8 @@ import {ItemDetailsPage} from "../pages/item-details/item-details";
     HomePage,
     LoginPage,
     RegistPage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    PushListPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

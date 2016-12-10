@@ -4,6 +4,7 @@ import { HomePage } from '../pages/home/home';
 import { ColumnWithTabPage } from '../pages/column/column-with-tab';
 import { ColumnWithMorePage } from '../pages/column/column-with-more';
 import { MyArtTabsPage } from '../pages/myart-tabs/myart-tabs';
+import {PushListPage} from "../pages/push-list/push-list";
 
 export class TabModel {
 
@@ -23,7 +24,7 @@ export class TabModel {
   }
 
   public static buildMyArtTabs() {
-    let tab_00 = new TabModel(ColumnWithMorePage, '0', '联系我们', 'sub-tab00', ColumnInfoModel.buildWD());
+    let tab_00 = new TabModel(PushListPage, '0', '消息推送', 'sub-tab00', ColumnInfoModel.buildWD());
     let tab_01 = new TabModel(ColumnWithMorePage, '1', '用户留言', 'sub-tab01', ColumnInfoModel.buildWD());
     let tab_02 = new TabModel(ColumnWithMorePage, '2', '版本更新', 'sub-tab02', ColumnInfoModel.buildWD());
 

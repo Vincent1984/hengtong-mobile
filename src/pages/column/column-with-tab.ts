@@ -48,7 +48,7 @@ export class ColumnWithTabPage {
   selectedSubTab(navTab) {
     this.selectedNavTabId = navTab.tabId;
     this.contentInfoService.topList(this.selectedNavTabId, this.record_num).then(contentInfos => {
-      this.contentInfos = contentInfos;
+      this.contentInfos =  this.dealWithImgPath(contentInfos);
     });
   }
 

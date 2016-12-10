@@ -1,20 +1,3 @@
-<ion-menu [content]="content">
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <button ion-item  (click)="quit()">
-        退出
-      </button>
-    </ion-list>
-  </ion-content>
-
-</ion-menu>
-
 <ion-tabs mode="ios">
   <ion-tab *ngFor="let tab of tabs" [root]="tab.tabPage" [rootParams]="tab.columnInfoModel" tabTitle="{{tab.tabName}}" tabIcon="{{tab.tabIcon}}"></ion-tab>
 </ion-tabs>
