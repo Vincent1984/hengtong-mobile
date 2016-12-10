@@ -18,7 +18,7 @@ export class UserInfoService {
   }
 
   regist(userInfo) {
-    return this.resourceService.doPost(this.apiRegist, userInfo, null);
+    return this.resourceService.doPost(this.apiRegist, null, userInfo);
   }
 
 }

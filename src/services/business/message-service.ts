@@ -13,7 +13,7 @@ export class MessageService {
 
 
   send(messageInfo) {
-    return this.resourceService.doPost(this.apiUrl, messageInfo, null);
+    return this.resourceService.doPost(this.apiUrl, null, messageInfo);
   }
 
 }
