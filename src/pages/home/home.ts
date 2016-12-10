@@ -9,6 +9,7 @@ import { ResourceService } from "../../services/basic/resource-service";
 import { ContentInfoService } from '../../services/business/content-info-service';
 import { RecommandInfoService } from "../../services/business/recommand-info-service";
 import {TabsPage} from "../tabs/tabs";
+import {ItemDetailsPage} from "../item-details/item-details";
 
 @Component({
   selector: 'page-home',
@@ -78,5 +79,11 @@ export class HomePage {
       contentInfos[i].imgName="http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/"+contentInfos[i].imgName;
     }
     return contentInfos;
+  }
+
+  itemTapped(event, item) {
+    this.navCtrl.push(ItemDetailsPage, {
+      item: item
+    });
   }
 }

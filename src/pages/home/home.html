@@ -83,7 +83,7 @@
     <ion-content>
       <div [ngSwitch]="legacy">
         <ion-list *ngSwitchCase="'puppies'">
-          <ion-item *ngFor="let contentInfo of contentInfosFYDT">
+          <ion-item *ngFor="let contentInfo of contentInfosFYDT"  (click)="itemTapped($event, contentInfo)">
             <ion-thumbnail item-left>
               <img src="{{contentInfo.imgName}}" />
             </ion-thumbnail>
@@ -92,7 +92,7 @@
           </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="'kittens'">
-          <ion-item *ngFor="let contentInfo of contentInfosFYML">
+          <ion-item *ngFor="let contentInfo of contentInfosFYML" (click)="itemTapped($event, contentInfo)">
             <ion-thumbnail item-left>
               <img src="{{contentInfo.imgName}}" />
             </ion-thumbnail>
@@ -101,7 +101,7 @@
           </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="'ducklings'">
-          <ion-item *ngFor="let contentInfo of contentInfosFYGZ">
+          <ion-item *ngFor="let contentInfo of contentInfosFYGZ" (click)="itemTapped($event, contentInfo)">
             <ion-thumbnail item-left>
               <img src="{{contentInfo.imgName}}" />
             </ion-thumbnail>
@@ -124,7 +124,7 @@
       <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
     </div>
     <ion-list>
-      <ion-item  *ngFor="let contentInfo of contentInfosTJNR">
+      <ion-item  *ngFor="let contentInfo of contentInfosTJNR" (click)="itemTapped($event, contentInfo)">
         <ion-thumbnail item-left>
           <img src="{{contentInfo.imgName}}" />
         </ion-thumbnail>
