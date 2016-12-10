@@ -47,8 +47,8 @@ export class ColumnWithTabPage {
 
   selectedSubTab(navTab) {
     this.selectedNavTabId = navTab.tabId;
-    this.contentInfoService.topList(this.selectedNavTabId, this.record_num).then(contentInfos => {
-      this.contentInfos =  this.dealWithImgPath(contentInfos);
+    this.contentInfoService.list(this.selectedNavTabId).then(contentInfos => {
+      this.contentInfos =  this.dealWithImgPath(contentInfos.result);
     });
   }
 
@@ -68,8 +68,8 @@ export class ColumnWithTabPage {
   }
 
   loadFirstContents(tabId){
-      this.contentInfoService.topList(tabId, this.record_num).then(contentInfos => {
-        this.contentInfos = this.dealWithImgPath(contentInfos);
+      this.contentInfoService.list(tabId).then(contentInfos => {
+        this.contentInfos = this.dealWithImgPath(contentInfos.result);
       });
   }
 
@@ -80,7 +80,11 @@ export class ColumnWithTabPage {
   }
   dealWithImgPath(contentInfos) {
     for (var i = 0; i < contentInfos.length; i++) {
-      contentInfos[i].imgName="http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/"+contentInfos[i].imgName;
+      if(contentInfos[i].imgName && contentInfos[i].imgName!="") {
+        contentInfos[i].imgName = "http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/" + contentInfos[i].imgName;
+      }else{
+        contentInfos[i].imgName = "/assets/images/culture.jpg";
+      }
     }
     return contentInfos;
   }
