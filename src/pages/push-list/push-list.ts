@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, } from 'ionic-angular';
 
 import {ColumnInfoModel} from '../../models/column-info-model';
-import {ItemDetailsPage} from "../item-details/item-details";
 import {PushInfoService} from "../../services/business/push-info-service";
 import {StorageService} from "../../services/basic/storage-service";
 import {ResourceService} from "../../services/basic/resource-service";
 import {PushInfoModel} from "../../models/push-info-model";
+import {PushDetailPage} from "./push-detail";
 
 @Component({
   selector: 'page-push-list',
@@ -45,7 +45,7 @@ export class PushListPage {
   }
 
   itemTapped(event, item) {
-    this.navCtrl.push(ItemDetailsPage, {
+    this.navCtrl.push(PushDetailPage, {
       item: item
     });
   }
