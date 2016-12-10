@@ -1,0 +1,28 @@
+<ion-header mode="ios" no-shadow>
+  <ion-toolbar mode="ios" border-bottom>
+    <ion-buttons mode="ios" left>
+      <button ion-button>
+        <ion-icon name="arrow-back" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>{{columnInfoModel.columnName}}</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom>
+    <ion-segment mode="md" no-border-bottom>
+      <ion-segment-button mode="md" text-left>
+        <span color="dark">用户留言</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label floating>留言内容</ion-label>
+    <ion-textarea rows="10"  [(ngModel)]="messageModel.feedbackContent" [ngModelOptions]="{standalone: true}"  ></ion-textarea>
+  </ion-item>
+  <ion-item class="button-row">
+    <button ion-button icon-right type="submit" (click)="send()">提交</button>
+  </ion-item>
+</ion-content>
