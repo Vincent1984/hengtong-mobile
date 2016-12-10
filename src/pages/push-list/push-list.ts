@@ -52,9 +52,12 @@ export class PushListPage {
 
 
   loadContents(){
-    this.pushInfoService.list(this.storageService.read("hengtong-id")).then(pushInfos => {
-      this.pushInfos =  pushInfos;
-    });
+    if(this.storageService.read("hengtong-id")&&this.storageService.read("hengtong-id")!=null && this.storageService.read("hengtong-id")!={}){
+      this.pushInfoService.list(this.storageService.read("hengtong-id")).then(pushInfos => {
+        this.pushInfos =  pushInfos;
+      });
+    }
+
   }
 
 }

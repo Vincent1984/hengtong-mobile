@@ -14,11 +14,11 @@ page-myart-tabs {
 		//for ios
 		.ion-ios-tab0#{$i} {
 			@extend .ion-tab-icon-base;
-			content: url("../assets/images/tab0#{$i}_active.png");
+			content: url("../../assets/images/tab0#{$i}_active.png");
 		}
 		.ion-ios-tab0#{$i}-outline {
 			@extend .ion-tab-icon-base;
-			content: url("../assets/images/tab0#{$i}.png");
+			content: url("../../assets/images/tab0#{$i}.png");
 		}
 	}
 

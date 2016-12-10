@@ -3,15 +3,13 @@ import {NavController, NavParams} from 'ionic-angular';
 import { StorageService } from '../../services/basic/storage-service';
 import {ResourceService} from "../../services/basic/resource-service";
 import {ColumnInfoModel} from "../../models/column-info-model";
-import {MessageModel} from "../../models/message-model";
-import {MessageService} from "../../services/business/message-service";
 import {VersionModel} from "../../models/version-model";
 import {VersionService} from "../../services/business/version-service";
 
 @Component({
   selector: 'page-version',
   templateUrl: 'version.html',
-  providers: [ResourceService, MessageService,StorageService]
+  providers: [ResourceService, VersionService,StorageService]
 })
 export class VersionPage {
   versionModel: VersionModel;
