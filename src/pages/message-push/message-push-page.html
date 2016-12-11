@@ -12,22 +12,16 @@
       </button>
     </ion-buttons>
   </ion-toolbar>
-
-  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom>
-    <ion-segment mode="md" no-border-bottom>
-      <ion-segment-button mode="md" text-left>
-        <span color="dark">用户留言</span>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label floating>留言内容</ion-label>
-    <ion-textarea rows="10" [(ngModel)]="messageInfoModel.feedbackContent" [ngModelOptions]="{standalone: true}"  ></ion-textarea>
-  </ion-item>
-  <ion-item class="button-row">
-    <button ion-button full type="submit" (click)="send()">提交</button>
-  </ion-item>
+  <ion-card>
+    <ion-list>
+      <ion-list-header>
+        <ion-label stacked>留言内容:</ion-label>
+        <ion-textarea box-shadow rows="5" [(ngModel)]="messageInfoModel.feedbackContent" [ngModelOptions]="{standalone: true}" placeholder="请填写留言内容..."></ion-textarea>
+      </ion-list-header>
+    </ion-list>
+    <button ion-button full (click)="send()">提交</button>
+  </ion-card>
 </ion-content>

@@ -1,7 +1,7 @@
 <ion-header mode="ios" no-shadow>
   <ion-toolbar mode="ios" border-bottom>
     <ion-buttons mode="ios" left>
-      <button ion-button [navPush]="homePage">
+      <button ion-button [navPush]="columnTabsPage">
         <ion-icon name="arrow-back" color="dark"></ion-icon>
       </button>
     </ion-buttons>
@@ -11,14 +11,6 @@
         <ion-icon name="menu" color="dark"></ion-icon>
       </button>
     </ion-buttons>
-  </ion-toolbar>
-
-  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom>
-    <ion-segment mode="md" no-border-bottom>
-      <ion-segment-button mode="md">
-        <span color="dark">推送消息</span>
-      </ion-segment-button>
-    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
@@ -32,12 +24,15 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-list-header *ngFor="let item of pushInfos" (click)="goMessageInfoPage(item)">
+    <ion-list-header *ngFor="let item of messageInfos" (click)="goMessageInfoPage(item)">
       <h2>{{item.feedbackContent}}</h2>
     </ion-list-header>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    <ion-infinite-scroll-content 
+      loadingSpinner="circles"
+      loadingText="正在努力加载,请稍后...">
+    </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>

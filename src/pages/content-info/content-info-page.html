@@ -17,11 +17,11 @@
 <ion-content>
   <ion-list>
     <ion-item no-lines>
-      <ion-title detail-push>{{contentInfoModel.title}}</ion-title>
+      <ion-title text-center>{{contentInfoModel.title}}</ion-title>
     </ion-item>
     <ion-item no-lines>
-      <ion-label fixed>{{contentInfoModel.addDate}}</ion-label>
-      <ion-label fixed>{{contentInfoModel.subTitle}}</ion-label>
+      <ion-label>{{contentInfoModel.addDate}}</ion-label>
+      <ion-label>{{contentInfoModel.subTitle}}</ion-label>
     </ion-item>
     <ion-item text-wrap>
       <div [innerHTML]="contentInfoModel.content"></div>

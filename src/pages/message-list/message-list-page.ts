@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams, } from 'ionic-angular';
 
-import { MuseumHomePage } from '../museum-home/museum-home-page';
+import { ColumnTabsPage } from '../column-tabs/column-tabs-page';
 import { MessageInfoPage } from '../message-info/message-info-page';
 
 import { ResourceService } from '../../services/basic/resource-service';
@@ -23,7 +23,7 @@ export class MessageListPage {
 
   userId: string;
 
-  homePage: MuseumHomePage;
+  columnTabsPage = ColumnTabsPage;
 
   //消息列表
   messageInfos: Array<MessageInfoModel>;
