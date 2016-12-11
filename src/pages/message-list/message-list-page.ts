@@ -23,11 +23,12 @@ export class MessageListPage {
 
   userId: string;
 
+  homePage: MuseumHomePage;
+
   //消息列表
   messageInfos: Array<MessageInfoModel>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private messageInfoService: MessageInfoService, private userInfoService: UserInfoService) {
-    this.homePage = MuseumHomePage;
     this.userId = JSON.stringify(this.userInfoService.getUserId());
     this.loadMessages();
   }
