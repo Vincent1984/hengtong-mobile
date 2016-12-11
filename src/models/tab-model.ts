@@ -1,12 +1,11 @@
 import { ColumnInfoModel } from './column-info-model';
 
-import { HomePage } from '../pages/home/home';
-import { ColumnWithTabPage } from '../pages/column/column-with-tab';
-import { ColumnWithMorePage } from '../pages/column/column-with-more';
-import { MyArtTabsPage } from '../pages/myart-tabs/myart-tabs';
-import {PushListPage} from "../pages/push-list/push-list";
-import {MessagePage} from "../pages/message/message";
-import {VersionPage} from "../pages/version/version";
+import { MuseumHomePage } from '../pages/museum-home/museum-home-page';
+import { ContentListPage } from '../pages/content-list/content-list-page';
+import { MyartTabsPage } from '../pages/myart-tabs/myart-tabs-page';
+import { MessageListPage } from '../pages/message-list/message-list-page';
+import { MessagePushPage } from '../pages/message-push/message-push-page';
+import { VersionUpdatePage } from '../pages/version-update/version-update-page';
 
 export class TabModel {
 
@@ -14,21 +13,19 @@ export class TabModel {
   }
 
   public static buildTabs() {
-    let tab_01 = new TabModel(HomePage, '1', '首页', 'tab01', ColumnInfoModel.buildSY());
-    let tab_02 = new TabModel(ColumnWithTabPage, '2', '专题活动', 'tab02', ColumnInfoModel.buildZT());
-    let tab_03 = new TabModel(ColumnWithTabPage, '3', '非遗文化', 'tab03', ColumnInfoModel.buildFY());
-    let tab_04 = new TabModel(ColumnWithTabPage, '4', '群文期刊', 'tab04', ColumnInfoModel.buildQK());
-
-    // let tab_04 = new TabModel(ColumnWithTabPage, '4', '其他', 'tab04', ColumnInfoModel.buildQT());
-    let tab_05 = new TabModel(MyArtTabsPage, '5', '我的艺术馆', 'tab05', ColumnInfoModel.buildWD());
+    let tab_01 = new TabModel(MuseumHomePage, '1', '首页', 'tab01', ColumnInfoModel.buildSY());
+    let tab_02 = new TabModel(ContentListPage, '2', '专题活动', 'tab02', ColumnInfoModel.buildZT());
+    let tab_03 = new TabModel(ContentListPage, '3', '非遗文化', 'tab03', ColumnInfoModel.buildFY());
+    let tab_04 = new TabModel(ContentListPage, '4', '群文期刊', 'tab04', ColumnInfoModel.buildQK());
+    let tab_05 = new TabModel(MyartTabsPage, '5', '我的艺术馆', 'tab05', ColumnInfoModel.buildWD());
 
     return [tab_01, tab_02, tab_03, tab_04, tab_05];
   }
 
   public static buildMyArtTabs() {
-    let tab_00 = new TabModel(PushListPage, '0', '消息推送', 'sub-tab00', ColumnInfoModel.buildWD());
-    let tab_01 = new TabModel(MessagePage, '1', '用户留言', 'sub-tab01', ColumnInfoModel.buildWD());
-    let tab_02 = new TabModel(VersionPage, '2', '版本更新', 'sub-tab02', ColumnInfoModel.buildWD());
+    let tab_00 = new TabModel(MessageListPage, '0', '消息推送', 'home', ColumnInfoModel.buildWD());
+    let tab_01 = new TabModel(MessagePushPage, '1', '用户留言', 'home', ColumnInfoModel.buildWD());
+    let tab_02 = new TabModel(VersionUpdatePage, '2', '版本更新', 'home', ColumnInfoModel.buildWD());
 
     return [tab_00, tab_01, tab_02];
   }

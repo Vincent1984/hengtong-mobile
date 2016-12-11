@@ -8,10 +8,10 @@
       "dom",
       "es2015"
     ],
-    "module": "es2015",
+    "module": "none",
     "moduleResolution": "node",
     "sourceMap": true,
-    "target": "es5"
+    "target": "ES6"
   },
   "include": [
     "src/**/*.ts"

@@ -2,34 +2,45 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { TabsPage } from '../pages/tabs/tabs';
-import { MyArtTabsPage } from '../pages/myart-tabs/myart-tabs';
-import { HomePage } from '../pages/home/home';
-import { ColumnWithTabPage } from '../pages/column/column-with-tab';
-import { ColumnWithMorePage } from '../pages/column/column-with-more';
-import { LoginPage } from '../pages/login/login';
-import { RegistPage } from '../pages/regist/regist';
-import {ItemDetailsPage} from "../pages/item-details/item-details";
-import {PushListPage} from "../pages/push-list/push-list";
-import {MessagePage} from "../pages/message/message";
-import {PushDetailPage} from "../pages/push-list/push-detail";
-import {VersionPage} from "../pages/version/version";
+// 首页
+import { MuseumHomePage } from '../pages/museum-home/museum-home-page';
+// 登录页
+import { UserLoginPage } from '../pages/user-login/user-login-page';
+// 注册页
+import { UserRegistPage } from '../pages/user-regist/user-regist-page';
+
+// 栏目导航
+import { ColumnTabsPage } from '../pages/column-tabs/column-tabs-page';
+// 内容列表页
+import { ContentListPage } from '../pages/content-list/content-list-page';
+// 内容详情页
+import { ContentInfoPage } from '../pages/content-info/content-info-page';
+
+// 我的艺术馆导航
+import { MyartTabsPage } from '../pages/myart-tabs/myart-tabs-page';
+// 消息列表
+import { MessageListPage } from '../pages/message-list/message-list-page';
+// 消息内容
+import { MessageInfoPage } from '../pages/message-info/message-info-page';
+// 消息推送
+import { MessagePushPage } from '../pages/message-push/message-push-page';
+// 版本升级
+import { VersionUpdatePage } from '../pages/version-update/version-update-page';
 
 @NgModule({
   declarations: [
     MyApp,
-    ColumnWithTabPage,
-    ColumnWithMorePage,
-    TabsPage,
-    MyArtTabsPage,
-    HomePage,
-    LoginPage,
-    RegistPage,
-    ItemDetailsPage,
-    PushListPage,
-    MessagePage,
-    PushDetailPage,
-    VersionPage
+    MuseumHomePage,
+    UserLoginPage,
+    UserRegistPage,
+    ColumnTabsPage,
+    ContentListPage,
+    ContentInfoPage,
+    MyartTabsPage,
+    MessageListPage,
+    MessageInfoPage,
+    MessagePushPage,
+    VersionUpdatePage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -44,18 +55,17 @@ import {VersionPage} from "../pages/version/version";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ColumnWithTabPage,
-    ColumnWithMorePage,
-    TabsPage,
-    MyArtTabsPage,
-    HomePage,
-    LoginPage,
-    RegistPage,
-    ItemDetailsPage,
-    PushListPage,
-    MessagePage,
-    PushDetailPage,
-    VersionPage
+    MuseumHomePage,
+    UserLoginPage,
+    UserRegistPage,
+    ColumnTabsPage,
+    ContentListPage,
+    ContentInfoPage,
+    MyartTabsPage,
+    MessageListPage,
+    MessageInfoPage,
+    MessagePushPage,
+    VersionUpdatePage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

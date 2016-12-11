@@ -1,0 +1,46 @@
+<ion-header mode="ios" no-shadow>
+  <ion-toolbar mode="ios" border-bottom>
+    <ion-title text-center>{{columnInfoModel.columnName}}</ion-title>
+    <ion-buttons menuToggle mode="ios" right>
+      <button ion-button>
+        <ion-icon name="menu" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom *ngIf="hasSubColumn">
+    <ion-segment mode="md" color="dark" border-bottom [(ngModel)]="columnInfoModel.selectedSubId">
+      <ion-segment-button *ngFor="let subColumn of columnInfoModel.subColumns" value="{{subColumn.columnId}}" (ionSelect)="doSelect(subColumn)">
+        <span>{{subColumn.columnName}}</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)" pullMax="600">
+    <ion-refresher-content
+      pullingText="我刷,我刷,我刷刷刷"
+      refreshingSpinner="circles"
+      refreshingText="正在努力加载,请稍后...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-list-header text-wrap *ngFor="let item of contentInfos">
+      <ion-thumbnail item-left (click)="goContentPage(item.id)">
+        <img src="{{item.filterImaName()}}" alt="" />
+      </ion-thumbnail >
+      <h2>{{item.title}}</h2>
+      <p>{{item.content}}</p>
+    </ion-list-header>
+  </ion-list>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content 
+      loadingSpinner="bubbles"
+      loadingText="正在努力加载,请稍后...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -7,8 +7,10 @@ export class PagingModel<T> {
   }
 
   public refresh(dataCounts, result) {
-    this.startIndex = dataCounts + this.startIndex + 1;
-    this.result = result;
+    if (result && 0 < result.length) {
+      this.startIndex = dataCounts + this.startIndex;
+      this.result = result;
+    }
     return this;
   }
 

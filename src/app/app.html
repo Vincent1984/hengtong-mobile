@@ -1,15 +1,15 @@
 <ion-menu [content]="content">
 
-  <ion-header>
-    <ion-toolbar>
+  <ion-header mode="ios">
+    <ion-toolbar mode="ios">
       <ion-title>大连群众艺术馆</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button ion-item  (click)="quit()">
-        退出登陆
+      <button ion-item (click)="quit()">
+        <span>退出登陆</span>
       </button>
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}

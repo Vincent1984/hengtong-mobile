@@ -13,5 +13,13 @@ export class ContentInfoModel {
   constructor() {
   }
 
+  public filterImaName() {
+    if (this.imgName) {
+      return 'http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/' + this.imgName;
+    } else {
+      return '/assets/images/culture.jpg';
+    }
+  }
+
 }
 

@@ -17,8 +17,8 @@ export class RecommandInfoService {
   constructor(private resourceService: ResourceService) {
     this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/favoriteList';
     this.pagingModel = new PagingModel<ContentInfoModel>(50, 1);
-    this.imgQuery={'isImag':1};
-    this.allQuery={'isImag':0};
+    this.imgQuery = { 'isImag': 1 };
+    this.allQuery = { 'isImag': 0 };
 
   }
 
@@ -26,7 +26,7 @@ export class RecommandInfoService {
    * 置顶查询
    */
   topList(count) {
-    return this.resourceService.doGet(this.apiUrl + '/' + count + '/' + 1 , this.imgQuery).then(data => {
+    return this.resourceService.doGet(this.apiUrl + '/' + count + '/' + 1, this.imgQuery).then(data => {
       if (data.result) {
         let contentInfos: Array<ContentInfoModel>;
         contentInfos = [];
