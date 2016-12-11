@@ -9,6 +9,7 @@ import { StorageService } from '../../services/basic/storage-service';
 import { ResourceService } from '../../services/basic/resource-service';
 
 import { UserInfoModel } from '../../models/user-info-model';
+import {ColumnTabsPage} from "../column-tabs/column-tabs-page";
 
 @Component({
   selector: 'user-regist-page',
@@ -48,6 +49,10 @@ export class UserRegistPage {
   openLogin() {
     // navigate to the new page if it is not the current page
     this.navCtrl.push(UserLoginPage);
+  }
+
+  openHome() {
+    this.navCtrl.push(ColumnTabsPage);
   }
 
 }

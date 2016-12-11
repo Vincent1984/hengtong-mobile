@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DynamicComponentLoader, Injector, ElementRef, OnInit } from 'angular2/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -16,5 +15,7 @@ export class MessageInfoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.messageInfoModel = this.navParams.data.messageInfo;
   }
+
+
 
 }

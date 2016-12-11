@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DynamicComponentLoader, ElementRef, OnInit } from 'angular2/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -25,7 +24,12 @@ export class ContentInfoPage {
 
   loadContent() {
     this.contentInfoService.getDetail(this.navParams.data.contentId).then(result => {
-      this.contentInfoModel = result[0];
+      if(result){
+        this.contentInfoModel = result[0];
+      }else{
+        // alert("没有获取到数据");
+      }
+
     });
   }
 

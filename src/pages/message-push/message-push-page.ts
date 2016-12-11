@@ -7,6 +7,8 @@ import { MessageInfoService } from '../../services/business/message-info-service
 import { UserInfoService } from '../../services/business/user-info-service';
 
 import { MessageInfoModel} from '../../models/message-info-model';
+import {TabModel} from "../../models/tab-model";
+import {ColumnTabsPage} from "../column-tabs/column-tabs-page";
 
 @Component({
   selector: 'message-push-page',
@@ -34,6 +36,11 @@ export class MessagePushPage {
     } else {
       alert("请输入留言信息");
     }
+  }
+
+  openHome() {
+    TabModel.buildTabs();
+    this.navCtrl.push(ColumnTabsPage);
   }
 
 }

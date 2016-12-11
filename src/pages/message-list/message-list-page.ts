@@ -10,6 +10,7 @@ import { MessageInfoService } from '../../services/business/message-info-service
 import { UserInfoService } from '../../services/business/user-info-service';
 
 import { MessageInfoModel } from '../../models/message-info-model';
+import {TabModel} from "../../models/tab-model";
 
 
 @Component({
@@ -72,5 +73,11 @@ export class MessageListPage {
       messageInfo: messageInfo
     });
   }
+
+  openHome() {
+    TabModel.buildTabs();
+    this.navCtrl.push(ColumnTabsPage);
+  }
+
 
 }

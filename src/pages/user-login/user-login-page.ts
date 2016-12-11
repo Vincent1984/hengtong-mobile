@@ -11,6 +11,7 @@ import { UserInfoService } from '../../services/business/user-info-service';
 import { StorageService } from '../../services/basic/storage-service';
 
 import { UserInfoModel } from '../../models/user-info-model';
+import {ColumnTabsPage} from "../column-tabs/column-tabs-page";
 
 @Component({
   selector: 'user-login-page',
@@ -22,6 +23,7 @@ export class UserLoginPage {
   userInfoModel: UserInfoModel;
 
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService, private storageService: StorageService) {
+    this.checkIfLogined();
     this.userInfoModel = new UserInfoModel();
   }
 
@@ -40,6 +42,20 @@ export class UserLoginPage {
   openRegist() {
     // navigate to the new page if it is not the current page
     this.navCtrl.push(UserRegistPage);
+  }
+
+  openHome() {
+    this.navCtrl.push(ColumnTabsPage);
+  }
+
+  checkIfLogined() {
+      let userId = this.userInfoService.getUserId();
+      console.log('hengtong-id is ' + userId);
+      if (userId) {
+        this.navCtrl.push(MyartTabsPage);
+      } else {
+        //stay here
+      }
   }
 
 }

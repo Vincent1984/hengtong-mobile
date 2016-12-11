@@ -4,6 +4,7 @@ export class VersionInfoModel {
   osStr: string;
 
   constructor() {
+    this.currentVersion = "1.0";
   }
 
 }

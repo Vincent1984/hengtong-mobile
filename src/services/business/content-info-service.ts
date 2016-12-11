@@ -4,7 +4,6 @@ import { BusinessService } from '../basic/business-service';
 import { ResourceService } from '../basic/resource-service';
 
 import { ContentInfoModel } from '../../models/content-info-model';
-import { PagingModel } from '../../models/paging-model';
 
 @Injectable()
 export class ContentInfoService extends BusinessService<ContentInfoModel> {
@@ -55,11 +54,16 @@ export class ContentInfoService extends BusinessService<ContentInfoModel> {
 
   getDetail(contentId) {
     return this.resourceService.doGet(this.detailUrl + '/' + contentId, null).then(data => {
-      if (data.result) {
-        let contentInfo: ContentInfoModel;
-        contentInfo = data.result;
-        return contentInfo;
+      if (data&&data!=null) {
+        if (data.result && data.result!=null) {
+          let contentInfo: ContentInfoModel;
+          contentInfo = data.result;
+          return contentInfo;
+        }
+      } else {
+        // alert("数据获取失败，请稍后重试");
       }
+
     });
   }
 

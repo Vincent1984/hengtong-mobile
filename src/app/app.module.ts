@@ -26,6 +26,7 @@ import { MessageInfoPage } from '../pages/message-info/message-info-page';
 import { MessagePushPage } from '../pages/message-push/message-push-page';
 // 版本升级
 import { VersionUpdatePage } from '../pages/version-update/version-update-page';
+import {RecommandListPage} from "../pages/recommand-list/recommand-list-page";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { VersionUpdatePage } from '../pages/version-update/version-update-page';
     MessageListPage,
     MessageInfoPage,
     MessagePushPage,
-    VersionUpdatePage
+    VersionUpdatePage,
+    RecommandListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -65,7 +67,8 @@ import { VersionUpdatePage } from '../pages/version-update/version-update-page';
     MessageListPage,
     MessageInfoPage,
     MessagePushPage,
-    VersionUpdatePage
+    VersionUpdatePage,
+    RecommandListPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

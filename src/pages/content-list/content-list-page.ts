@@ -10,7 +10,6 @@ import { ResourceService } from '../../services/basic/resource-service';
 import { ContentInfoService } from '../../services/business/content-info-service';
 
 // 引入资源模型
-import { PagingModel } from '../../models/paging-model';
 import { ColumnInfoModel } from '../../models/column-info-model';
 import { ContentInfoModel } from "../../models/content-info-model";
 
@@ -32,7 +31,7 @@ export class ContentListPage {
   contentInfosMap: Map<string, Array<ContentInfoModel>>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private contentInfoService: ContentInfoService) {
- 
+
     this.columnInfoModel = navParams.data;
 
     if (this.columnInfoModel.subColumns) {

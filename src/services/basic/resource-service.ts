@@ -21,6 +21,7 @@ export class ResourceService {
                       if (0 == data.errorCode) {
                         return data;
                       } else {
+                        alert(""+data.errorCode+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
                       }
                     })

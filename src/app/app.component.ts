@@ -29,7 +29,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: '注册页', component: UserRegistPage },
-      { title: '艺术馆页面', component: ColumnTabsPage },
+      { title: '回首页', component: ColumnTabsPage },
     ];
   }
 

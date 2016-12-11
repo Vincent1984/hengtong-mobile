@@ -11,6 +11,7 @@ import { ContentInfoModel } from "../../models/content-info-model";
 import { ResourceService } from "../../services/basic/resource-service";
 import { ContentInfoService } from '../../services/business/content-info-service';
 import { RecommandInfoService } from "../../services/business/recommand-info-service";
+import {RecommandListPage} from "../recommand-list/recommand-list-page";
 
 @Component({
   selector: 'museum-home-page',
@@ -91,6 +92,9 @@ export class MuseumHomePage {
   goToPage(columnId) {
     this.navCtrl.push(ColumnTabsPage);
   }
+  goToRecommandPage() {
+    this.navCtrl.push(RecommandListPage);
+  }
 
   dealWithImgPath(contentInfos) {
     for (var i = 0; i < contentInfos.length; i++) {
@@ -102,6 +106,12 @@ export class MuseumHomePage {
   itemTapped(event, item) {
     this.navCtrl.push(ContentInfoPage, {
       item: item
+    });
+  }
+
+  goContentPage(contentId) {
+    this.navCtrl.push(ContentInfoPage, {
+      contentId: contentId
     });
   }
 

@@ -6,20 +6,26 @@ import { ResourceService } from "../basic/resource-service";
 import { ContentInfoModel } from "../../models/content-info-model";
 import { PagingModel } from "../../models/paging-model";
 
+import { BusinessService } from '../basic/business-service';
+
 @Injectable()
-export class RecommandInfoService {
+export class RecommandInfoService extends BusinessService<ContentInfoModel> {
 
   apiUrl: string;
+  // detailUrl: string;
   pagingModel: PagingModel<ContentInfoModel>;
   imgQuery: {};
   allQuery: {};
+  columnId: string;
 
   constructor(private resourceService: ResourceService) {
+    super();
     this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/favoriteList';
-    this.pagingModel = new PagingModel<ContentInfoModel>(50, 1);
+    // this.detailUrl =  'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/detail';
+    this.pagingModel = new PagingModel<ContentInfoModel>(20, 1);
     this.imgQuery = { 'isImag': 1 };
     this.allQuery = { 'isImag': 0 };
-
+    this.columnId = "RECOMMAND";
   }
 
   /**
@@ -41,21 +47,31 @@ export class RecommandInfoService {
   }
 
   /**
-   * 栏目页分页查询
+   * 分页查询
    */
-  list() {
-    return this.resourceService.doGet(this.apiUrl + '/' + this.pagingModel.reqCount + '/' + this.pagingModel.startIndex, this.allQuery).then(data => {
+  findPaging(){
+    let pagingModel = this.getPagingModel(this.columnId);
+    return this.resourceService.doGet(this.apiUrl + '/' + pagingModel.reqCount + '/' + pagingModel.startIndex, this.allQuery).then(data => {
       if (data.result) {
-        let contentInfos: Array<ContentInfoModel>;
-        contentInfos = [];
-        for (let i in data.result) {
+        let contentInfos = new Array<ContentInfoModel>();
+        data.result.forEach(object => {
           let contentInfo = new ContentInfoModel();
-          Object.assign(contentInfo, data.result[i]);
+          Object.assign(contentInfo, object);
           contentInfos.push(contentInfo);
-        }
-        return this.pagingModel.refresh(data.dataCounts, contentInfos);
+        });
+        return pagingModel.refresh(data.dataCounts, contentInfos);
       }
     });
   }
+
+    // getDetail(contentId){
+    //   return this.resourceService.doGet(this.detailUrl + '/' + contentId, null).then(data => {
+    //     if (data&&data.result) {
+    //       let contentInfo: ContentInfoModel;
+    //       contentInfo = data.result;
+    //       return contentInfo;
+    //     }
+    //   });
+    // }
 
 }
