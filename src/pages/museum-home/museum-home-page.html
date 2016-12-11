@@ -28,12 +28,22 @@
     </div>
   </div>
 
-
+  <!-- 英博修改 -->
+  <ion-toolbar class="more" mode="md" bg-white no-padding-top no-padding-bottom>
+    <ion-segment mode="md">
+      <ion-segment-button mode="md" text-left>
+        <span color="dark">群文咨讯</span>
+      </ion-segment-button>
+      <ion-buttons mode="ios" right>
+        <button ion-button>
+          <span>更多信息</span>
+          <ion-icon name="arrow-forward"></ion-icon>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-segment>
+  </ion-toolbar>
   <div class="compaign">
-    <div class="compaign-head">
-      <h2>群文咨讯</h2>
-      <a href="javascript:" class="readmore" (click)="tabs.goSelected(3)">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
-    </div>
     <div class="compaign-content">
       <div class="compaign-row">
         <div class="compaign-cell" *ngFor="let contentInfo of  contentInfosQWZX1" (click)="itemTapped($event, contentInfo)">
@@ -50,72 +60,52 @@
     </div>
   </div>
 
-  <div class="segments" [ngStyle]="{'height': 'calc(61px + 2rem + '+3+'*(8rem + 16px))'}">
-    <ion-header>
-      <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom no-border-top>
-        <ion-segment mode="md" [(ngModel)]="legacy">
-          <ion-segment-button value="puppies">
-            <span>非遗动态</span>
-          </ion-segment-button>
-          <ion-segment-button value="kittens">
-            <span>非遗名录</span>
-          </ion-segment-button>
-          <ion-segment-button value="ducklings">
-            <span>非遗规章</span>
-          </ion-segment-button>
-        </ion-segment>
-      </ion-toolbar>
-    </ion-header>
+  <!-- 英博修改 -->
+  <ion-toolbar mode="md" bg-white no-padding-top no-padding-bottom no-border-top>
+    <ion-segment mode="md" border-bottom [(ngModel)]="legacy">
+      <ion-segment-button value="puppies">
+        <span>非遗动态</span>
+      </ion-segment-button>
+      <ion-segment-button value="kittens">
+        <span>非遗名录</span>
+      </ion-segment-button>
+      <ion-segment-button value="ducklings">
+        <span>非遗规章</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-list>
+    <ion-list-header text-wrap no-margin-bottom *ngFor="let contentInfo of contentInfosFYDT" (click)="itemTapped($event, contentInfo)">
+      <ion-thumbnail item-left>
+        <img src="{{contentInfo.imgName}}" />
+      </ion-thumbnail>
+      <h2>{{contentInfo.title}}</h2>
+      <p>{{contentInfo.content}}</p>
+    </ion-list-header>
+  </ion-list>
 
-    <ion-content>
-      <div [ngSwitch]="legacy">
-        <ion-list *ngSwitchCase="'puppies'">
-          <ion-list-header text-wrap *ngFor="let contentInfo of contentInfosFYDT" (click)="itemTapped($event, contentInfo)">
-            <ion-thumbnail item-left>
-              <img src="{{contentInfo.imgName}}" />
-            </ion-thumbnail>
-            <h2>{{contentInfo.title}}</h2>
-            <p>{{contentInfo.content}}</p>
-          </ion-list-header>
-        </ion-list>
-        <ion-list *ngSwitchCase="'kittens'">
-          <ion-list-header text-wrap *ngFor="let contentInfo of contentInfosFYML" (click)="itemTapped($event, contentInfo)">
-            <ion-thumbnail item-left>
-              <img src="{{contentInfo.imgName}}" />
-            </ion-thumbnail>
-            <h2>{{contentInfo.title}}</h2>
-            <p>{{contentInfo.content}}</p>
-          </ion-list-header>
-        </ion-list>
-        <ion-list *ngSwitchCase="'ducklings'">
-          <ion-list-header text-wrap *ngFor="let contentInfo of contentInfosFYGZ" (click)="itemTapped($event, contentInfo)">
-            <ion-thumbnail item-left>
-              <img src="{{contentInfo.imgName}}" />
-            </ion-thumbnail>
-            <h2>{{contentInfo.title}}</h2>
-            <p>{{contentInfo.content}}</p>
-          </ion-list-header>
-        </ion-list>
-      </div>
-      <div>
-        <a href="javascript:" class="readmore" (click)="tabs.goSelected(2)">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down" ></ion-icon></a>
-      </div>
-    </ion-content>
-  </div>
-
-  <div class="suggestion">
-    <div class="suggestion-head">
-      <h2>推荐内容</h2>
-      <a href="javascript:" class="readmore">显示更多<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></a>
-    </div>
-    <ion-list>
-      <ion-item  *ngFor="let contentInfo of contentInfosTJNR" (click)="itemTapped($event, contentInfo)">
-        <ion-thumbnail item-left>
-          <img src="{{contentInfo.imgName}}" />
-        </ion-thumbnail>
-        <h2>{{contentInfo.title}}</h2>
-        <p>{{contentInfo.content}}</p>
-      </ion-item>
-    </ion-list>
-  </div>
+  <!-- 英博修改 -->
+  <ion-toolbar class="more" mode="md" bg-white no-padding-top no-padding-bottom>
+    <ion-segment mode="md">
+      <ion-segment-button mode="md" text-left>
+        <span color="dark">推荐内容</span>
+      </ion-segment-button>
+      <ion-buttons mode="ios" right>
+        <button ion-button>
+          <span>更多信息</span>
+          <ion-icon name="arrow-forward"></ion-icon>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-list>
+    <ion-list-header text-wrap no-margin-bottom *ngFor="let contentInfo of contentInfosTJNR" (click)="itemTapped($event, contentInfo)">
+      <ion-thumbnail item-left>
+        <img src="{{contentInfo.imgName}}" />
+      </ion-thumbnail>
+      <h2>{{contentInfo.title}}</h2>
+      <p>{{contentInfo.content}}</p>
+    </ion-list-header>
+  </ion-list>
 </ion-content>

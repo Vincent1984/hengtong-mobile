@@ -48,37 +48,6 @@ museum-home-page {
     }
   }
 
-  .segments {
-    position: relative;
-    margin-bottom: 16px;
-    .scroll-content {
-      border-bottom: 1px solid $border;
-      margin-bottom: 0px !important;
-      background: white;
-      ion-thumbnail {
-        img {
-          height: 100%;
-        }
-      }
-      ion-list {
-        margin-bottom:0px;
-        border-bottom: 1px solid $border;
-      }
-      .readmore {
-        height: 2rem;
-        text-decoration:none;
-        margin-right: 16px;
-        line-height: 2rem;
-        float: right;
-        color: $themeColor;
-        ion-icon {
-          margin-left: 8px;
-        }
-      }
-
-    }
-  }
-
   .compaign {
     display: table;
     table-layout: fixed;
@@ -164,5 +133,14 @@ museum-home-page {
       margin-left: 8px;
     }
   }
+
+  ion-toolbar.more {
+    ion-segment {
+      ion-segment-button {
+        border-color: $themeColor !important;
+      }
+    }
+  }
+
 }
 

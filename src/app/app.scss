@@ -14,3 +14,57 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-toolbar {
+	min-height: 44px !important;
+
+	ion-segment {
+		ion-segment-button {
+			border-color: #fff !important;
+		}
+	
+		ion-segment-button.segment-activated {
+			border-color: $themeColor !important;
+			color: $themeColor !important;
+		}
+
+		ion-buttons {
+			margin-left: 0 !important;
+			border-bottom: 2px solid $themeColor !important;
+			opacity: 0.7;
+
+			[ion-button] {
+				height: 4.0rem !important;
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	[border-bottom] {
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+ion-content {
+	.scroll-content {
+		border-top: none !important;
+	}
+}
+
+[no-padding-top] {
+	padding-top: 0 !important;
+}
+
+[no-padding-bottom] {
+	padding-bottom: 0 !important;
+}
+
+[no-margin-bottom] {
+	margin-bottom: 0 !important;
+}
+
+[bg-white] {
+	.toolbar-background {
+		background: #fff !important;
+	}
+}
