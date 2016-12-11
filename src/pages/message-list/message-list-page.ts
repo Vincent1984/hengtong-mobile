@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams, } from 'ionic-angular';
 
-import { MuseumHomePage } from '../museum-home/museum-home-page';
+// import { MuseumHomePage } from '../museum-home/museum-home-page';
 import { MessageInfoPage } from '../message-info/message-info-page';
 
 import { ResourceService } from '../../services/basic/resource-service';
@@ -27,7 +27,7 @@ export class MessageListPage {
   messageInfos: Array<MessageInfoModel>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private messageInfoService: MessageInfoService, private userInfoService: UserInfoService) {
-    this.homePage = MuseumHomePage;
+    // this.homePage = MuseumHomePage;
     this.userId = JSON.stringify(this.userInfoService.getUserId());
     this.loadMessages();
   }
