@@ -33,7 +33,7 @@ export class RecommandInfoService extends BusinessService<ContentInfoModel> {
    */
   topList(count) {
     return this.resourceService.doGet(this.apiUrl + '/' + count + '/' + 1, this.imgQuery).then(data => {
-      if (data.result) {
+      if (data&&data!=null&&data.result) {
         let contentInfos: Array<ContentInfoModel>;
         contentInfos = [];
         for (let i in data.result) {

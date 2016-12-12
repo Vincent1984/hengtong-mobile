@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 //import { Validators, FormBuilder } from '@angular/forms';
 
-import { NavController } from 'ionic-angular';
+import {NavController, AlertController} from 'ionic-angular';
 
 import { UserRegistPage } from '../user-regist/user-regist-page';
 import { MyartTabsPage } from "../myart-tabs/myart-tabs-page";
@@ -22,7 +22,7 @@ export class UserLoginPage {
 
   userInfoModel: UserInfoModel;
 
-  constructor(public navCtrl: NavController, private userInfoService: UserInfoService, private storageService: StorageService) {
+  constructor(public navCtrl: NavController, private userInfoService: UserInfoService, private storageService: StorageService, private alertCtrl : AlertController) {
     this.checkIfLogined();
     this.userInfoModel = new UserInfoModel();
   }
@@ -31,9 +31,13 @@ export class UserLoginPage {
     let promise = this.userInfoService.login(this.userInfoModel);
     if (promise) {
       promise.then(data => {
-        if (0 == data.errorCode) {
+        if (data && 0 == data.errorCode) {
           this.storageService.write('hengtong-id', data.result[0].userId);
           this.navCtrl.push(MyartTabsPage);
+        } else if (data && 0 != data.errorCode) {
+          this.showAlert("登陆出现问题了@_@"+data.errorMsg);
+        } else {
+          this.showAlert("登陆出现问题了@_@");
         }
       });
     }
@@ -56,6 +60,15 @@ export class UserLoginPage {
       } else {
         //stay here
       }
+  }
+
+  showAlert(message) {
+    let alert = this.alertCtrl.create({
+      title: '信息提示',
+      subTitle: message,
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

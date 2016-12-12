@@ -23,7 +23,7 @@ export class MessageInfoService extends BusinessService<MessageInfoModel> {
 
   pull(userId) {
     return this.resourceService.doGet(this.pullUrl, { 'userId': userId }).then(data => {
-      if (data.result) {
+      if (data&&data!=null&&data.result) {
         let messageInfos = new Array<MessageInfoModel>();
         data.result.forEach(object => {
           let messageInfo = new MessageInfoModel();

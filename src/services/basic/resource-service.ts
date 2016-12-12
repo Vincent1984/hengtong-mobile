@@ -3,11 +3,12 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';
+import {AlertController} from "ionic-angular";
 
 @Injectable()
 export class ResourceService {
 
-  constructor(private http: Http) {
+  constructor(private http: Http,private alertCtrl: AlertController) {
   }
 
   public doGet(url: string, query: any) {
@@ -18,11 +19,13 @@ export class ResourceService {
                     .toPromise()
                     .then(res => res.json())
                     .then(data => {
-                      if (0 == data.errorCode) {
+                      if (data && 0 == data.errorCode) {
                         return data;
-                      } else {
-                        alert(""+data.errorCode+data.errorMsg);
+                      } else if (data && 0 != data.errorCode)  {
+                        this.showAlert("小编没有获取到数据哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
+                      } else {
+                        this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {
@@ -38,10 +41,13 @@ export class ResourceService {
                     .toPromise()
                     .then(res => res.json())
                     .then(data => {
-                      if (0 == data.errorCode) {
+                      if (data && 0 == data.errorCode) {
                         return data;
-                      } else {
+                      } else if (data && 0 != data.errorCode)  {
+                        this.showAlert("小编发送有点问题哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
+                      } else {
+                        this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {
@@ -57,10 +63,13 @@ export class ResourceService {
                     .toPromise()
                     .then(res => res.json())
                     .then(data => {
-                      if (0 == data.errorCode) {
+                      if (data && 0 == data.errorCode) {
                         return data;
-                      } else {
+                      } else if (data && 0 != data.errorCode)  {
+                        this.showAlert("小编发送有点问题哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
+                      } else {
+                        this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {
@@ -76,14 +85,17 @@ export class ResourceService {
                     .toPromise()
                     .then(res => res.json())
                     .then(data => {
-                      if (0 == data.errorCode) {
+                      if (data && 0 == data.errorCode) {
                         return data;
-                      } else {
+                      } else if (data && 0 != data.errorCode)  {
+                        this.showAlert("小编发送有点问题哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
+                      } else {
+                        this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
-                    .catch(err => {
-                      this.handleError(err);
+                    .catch(err => {this.handleError(err);
+
                     });
   }
 
@@ -103,6 +115,14 @@ export class ResourceService {
     return str;
   }
 
+  showAlert(message) {
+    let alert = this.alertCtrl.create({
+      title: '信息提示',
+      subTitle: message,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 
 
 }

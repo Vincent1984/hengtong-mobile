@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 
 import { ResourceService } from '../../services/basic/resource-service';
 import { MessageInfoService } from '../../services/business/message-info-service';
@@ -18,7 +18,7 @@ import {ColumnTabsPage} from "../column-tabs/column-tabs-page";
 export class MessagePushPage {
   messageInfoModel: MessageInfoModel;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private messageInfoService: MessageInfoService, private userInfoService: UserInfoService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private messageInfoService: MessageInfoService, private userInfoService: UserInfoService, private alertCtrl: AlertController) {
     this.messageInfoModel = new MessageInfoModel();
     this.messageInfoModel.userId = JSON.stringify(userInfoService.getUserId());
   }
@@ -27,19 +27,28 @@ export class MessagePushPage {
     if (this.messageInfoModel.feedbackContent) {
       this.messageInfoService.push(this.messageInfoModel).then(data => {
         if (data && 0 == data.errorCode) {
-            alert("消息发送成功");
+            this.showAlert("消息发送成功");
         } else {
-            alert("消息发送失败");
+          this.showAlert("消息发送失败");
         }
       });
     } else {
-      alert("请输入留言信息");
+      this.showAlert("请输入留言信息");
     }
   }
 
   openHome() {
     TabModel.buildTabs();
     this.navCtrl.push(ColumnTabsPage);
+  }
+
+  showAlert(message) {
+    let alert = this.alertCtrl.create({
+      title: '信息提示',
+      subTitle: message,
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }
