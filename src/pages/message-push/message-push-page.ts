@@ -25,9 +25,8 @@ export class MessagePushPage {
 
   send() {
     if (this.messageInfoModel.feedbackContent) {
-      let promise = this.messageInfoService.push(this.messageInfoModel);
       this.messageInfoService.push(this.messageInfoModel).then(data => {
-        if (0 == data.errorCode) {
+        if (data && 0 == data.errorCode) {
             alert("消息发送成功");
         } else {
             alert("消息发送失败");

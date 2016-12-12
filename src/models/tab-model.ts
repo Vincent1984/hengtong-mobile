@@ -23,9 +23,9 @@ export class TabModel {
   }
 
   public static buildMyArtTabs() {
-    let tab_00 = new TabModel(MessageListPage, '0', '消息推送', 'home', ColumnInfoModel.buildWD());
-    let tab_01 = new TabModel(MessagePushPage, '1', '用户留言', 'home', ColumnInfoModel.buildWD());
-    let tab_02 = new TabModel(VersionUpdatePage, '2', '版本更新', 'home', ColumnInfoModel.buildWD());
+    let tab_00 = new TabModel(MessageListPage, '0', '消息推送', 'tab07', ColumnInfoModel.buildWD());
+    let tab_01 = new TabModel(MessagePushPage, '1', '用户留言', 'tab08', ColumnInfoModel.buildWD());
+    let tab_02 = new TabModel(VersionUpdatePage, '2', '版本更新', 'tab09', ColumnInfoModel.buildWD());
 
     return [tab_00, tab_01, tab_02];
   }
