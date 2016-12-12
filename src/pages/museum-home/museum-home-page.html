@@ -7,7 +7,7 @@
 <ion-content>
   <ion-slides #mySlider [options]="mySlideOptions" >
     <ion-slide *ngFor="let contentInfo of contentInfosBANNER">
-      <img src="{{contentInfo.imgName}}" />
+      <img src="{{contentInfo.imgName}}" (click)="goContentPage(contentInfo.id)"/>
     </ion-slide>
   </ion-slides>
   <div class="thumb-image">
