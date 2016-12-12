@@ -142,4 +142,11 @@
       <p>{{contentInfo.subTitle}}</p>
     </ion-list-header>
   </ion-list>
+  <ion-refresher (ionRefresh)="doRefresh($event)" pullMax="600">
+    <ion-refresher-content
+      pullingText="我刷,我刷,我刷刷刷"
+      refreshingSpinner="circles"
+      refreshingText="正在努力加载,请稍后...">
+    </ion-refresher-content>
+  </ion-refresher>
 </ion-content>

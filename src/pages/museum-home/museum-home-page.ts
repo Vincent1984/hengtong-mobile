@@ -115,4 +115,9 @@ export class MuseumHomePage {
     });
   }
 
+  doRefresh(refresher){
+    this.loadContents();
+    refresher.complete();
+  }
+
 }
