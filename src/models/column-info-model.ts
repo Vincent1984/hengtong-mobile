@@ -10,6 +10,7 @@ export class ColumnInfoModel {
   public static QXWT_ID = '50';  //群星舞台
   public static ZYZXY_ID = '52'; //志愿者巡演
   public static QWZX_ID = '12';  //群文资讯
+  public static PXTZ_ID = '27';  //培训通知
 
   constructor(public columnType: ColumnType, public columnId: string, public columnName: string, public selectedSubId: string, public subColumns: Array<ColumnInfoModel>) {
   }

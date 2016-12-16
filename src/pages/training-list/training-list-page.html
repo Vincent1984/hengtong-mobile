@@ -17,9 +17,6 @@
 
     <ion-list>
       <ion-list-header text-wrap *ngFor="let item of contentInfos" (click)="goContentInfoPage(item.id)">
-        <ion-thumbnail item-left>
-          <img src="{{item.filterImaName()}}" alt="" />
-        </ion-thumbnail >
         <h2>{{item.title}}</h2>
         <p>{{item.content}}</p>
       </ion-list-header>

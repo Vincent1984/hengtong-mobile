@@ -45,9 +45,6 @@
   </ion-toolbar>
   <ion-list   *ngIf="hasTraining==1">
     <ion-list-header text-wrap no-margin-bottom *ngFor="let contentInfo of contentInfosPXTZ"  (click)="goContentPage(contentInfo.id)">
-      <ion-thumbnail item-left>
-        <img src="{{contentInfo.imgName}}" />
-      </ion-thumbnail>
       <h2>{{contentInfo.title}}</h2>
       <p>{{contentInfo.subTitle}}</p>
     </ion-list-header>

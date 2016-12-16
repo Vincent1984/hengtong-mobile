@@ -8,6 +8,7 @@ import { ResourceService } from '../../services/basic/resource-service';
 import {ContentInfoModel} from "../../models/content-info-model";
 import {ContentInfoPage} from "../content-info/content-info-page";
 import {TrainingInfoService} from "../../services/business/training-info-service";
+import {ColumnInfoModel} from "../../models/column-info-model";
 
 
 @Component({
@@ -25,7 +26,7 @@ export class TrainingListPage {
   contentInfosMap: Map<string, Array<ContentInfoModel>>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private trainingInfoService: TrainingInfoService) {
-    this.columnId = "TRAINING";
+    this.columnId = ColumnInfoModel.PXTZ_ID;
     this.contentInfosMap = new Map();
     this.loadContents();
   }

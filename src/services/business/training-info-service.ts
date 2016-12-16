@@ -8,6 +8,7 @@ import { PagingModel } from "../../models/paging-model";
 
 import { BusinessService } from '../basic/business-service';
 import {Constants} from "../constants/constants";
+import {ColumnInfoModel} from "../../models/column-info-model";
 
 @Injectable()
 export class TrainingInfoService extends BusinessService<ContentInfoModel> {
@@ -25,14 +26,14 @@ export class TrainingInfoService extends BusinessService<ContentInfoModel> {
     this.pagingModel = new PagingModel<ContentInfoModel>(20, 1);
     this.imgQuery = { 'isImag': 1 };
     this.allQuery = { 'isImag': 0 };
-    this.columnId = "TRAINING";
+    this.columnId = ColumnInfoModel.PXTZ_ID;
   }
 
   /**
    * 置顶查询
    */
   topList(count) {
-    return this.resourceService.doGet(this.apiUrl + '/' + count + '/' + 1, this.imgQuery).then(data => {
+    return this.resourceService.doGet(this.apiUrl + '/'+ this.columnId + '/' + count + '/' + 1, this.allQuery).then(data => {
       if (data&&data!=null&&data.result) {
         let contentInfos: Array<ContentInfoModel>;
         contentInfos = [];
@@ -51,7 +52,7 @@ export class TrainingInfoService extends BusinessService<ContentInfoModel> {
    */
   findPaging(){
     let pagingModel = this.getPagingModel(this.columnId);
-    return this.resourceService.doGet(this.apiUrl + '/' + pagingModel.reqCount + '/' + pagingModel.startIndex, this.allQuery).then(data => {
+    return this.resourceService.doGet(this.apiUrl + '/'+ this.columnId + '/' + pagingModel.reqCount + '/' + pagingModel.startIndex, this.allQuery).then(data => {
       if (data.result) {
         let contentInfos = new Array<ContentInfoModel>();
         data.result.forEach(object => {
