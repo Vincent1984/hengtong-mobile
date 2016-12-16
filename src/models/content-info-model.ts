@@ -1,3 +1,4 @@
+import {Constants} from "../services/constants/constants";
 export class ContentInfoModel {
 
   id: number;
@@ -15,7 +16,7 @@ export class ContentInfoModel {
 
   public filterImaName() {
     if (this.imgName) {
-      return 'http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/' + this.imgName;
+      return Constants.IMG_URL + this.imgName;
     } else {
       return 'assets/images/culture.jpg';
     }

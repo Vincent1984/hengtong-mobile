@@ -1,0 +1,35 @@
+<ion-header mode="ios" no-shadow>
+  <ion-toolbar mode="ios" border-bottom>
+    <ion-title text-center>培训通知</ion-title>
+    <ion-buttons menuToggle mode="ios" right>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)" pullMax="600">
+      <ion-refresher-content
+        pullingText="我刷,我刷,我刷刷刷"
+        refreshingSpinner="circles"
+        refreshingText="正在努力加载,请稍后...">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list>
+      <ion-list-header text-wrap *ngFor="let item of contentInfos" (click)="goContentInfoPage(item.id)">
+        <ion-thumbnail item-left>
+          <img src="{{item.filterImaName()}}" alt="" />
+        </ion-thumbnail >
+        <h2>{{item.title}}</h2>
+        <p>{{item.content}}</p>
+      </ion-list-header>
+    </ion-list>
+
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="circles"
+        loadingText="正在努力加载,请稍后...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>

@@ -18,4 +18,8 @@ export class Constants {
 
   public static VERSION_URL  =  Constants.URL_PATH +  '/dlqzysgweb/web/users/checkVersion';  //检查版本
 
+  public static TRAINGING_URL  =  Constants.URL_PATH +  '/dlqzysgweb/web/commonContent/';    //培训通知
+
+  public static IMG_URL  =  Constants.URL_PATH +  '/dlqzysgweb/Public/upload/article/';    //图片链接
+
 }

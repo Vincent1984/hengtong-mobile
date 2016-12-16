@@ -28,6 +28,32 @@
     </div>
   </div>
 
+  <!-- 小辉修改 -->
+  <ion-toolbar  *ngIf="hasTraining==1" class="more" mode="md" bg-white no-padding-top no-padding-bottom>
+    <ion-segment mode="md">
+      <ion-segment-button mode="md" text-left>
+        <span color="dark">培训通知</span>
+      </ion-segment-button>
+      <ion-buttons mode="ios" right>
+        <button ion-button (click)="goToTrainingPage()">
+          <span>更多信息</span>
+          <ion-icon name="arrow-forward"></ion-icon>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-list   *ngIf="hasTraining==1">
+    <ion-list-header text-wrap no-margin-bottom *ngFor="let contentInfo of contentInfosPXTZ"  (click)="goContentPage(contentInfo.id)">
+      <ion-thumbnail item-left>
+        <img src="{{contentInfo.imgName}}" />
+      </ion-thumbnail>
+      <h2>{{contentInfo.title}}</h2>
+      <p>{{contentInfo.subTitle}}</p>
+    </ion-list-header>
+  </ion-list>
+
+
   <!-- 英博修改 -->
   <ion-toolbar class="more" mode="md" bg-white no-padding-top no-padding-bottom>
     <ion-segment mode="md">

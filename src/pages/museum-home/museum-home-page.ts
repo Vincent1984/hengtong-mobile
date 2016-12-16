@@ -12,11 +12,14 @@ import { ResourceService } from "../../services/basic/resource-service";
 import { ContentInfoService } from '../../services/business/content-info-service';
 import { RecommandInfoService } from "../../services/business/recommand-info-service";
 import {RecommandListPage} from "../recommand-list/recommand-list-page";
+import {TrainingListPage} from "../training-list/training-list-page";
+import {TrainingInfoService} from "../../services/business/training-info-service";
+import {Constants} from "../../services/constants/constants";
 
 @Component({
   selector: 'museum-home-page',
   templateUrl: 'museum-home-page.html',
-  providers: [ResourceService, ContentInfoService, RecommandInfoService]
+  providers: [ResourceService, ContentInfoService, RecommandInfoService, TrainingInfoService]
 })
 export class MuseumHomePage {
 
@@ -47,9 +50,13 @@ export class MuseumHomePage {
   //推荐内容
   contentInfosTJNR: Array<ContentInfoModel>;
 
+  contentInfosPXTZ: Array<ContentInfoModel>;
+
+  hasTraining: number;
+
   tabs: ColumnTabsPage;
 
-  constructor( @Host() @Inject(forwardRef(() => ColumnTabsPage)) tabs: ColumnTabsPage, public navCtrl: NavController, private contentInfoService: ContentInfoService, private recommandInfoService: RecommandInfoService) {
+  constructor( @Host() @Inject(forwardRef(() => ColumnTabsPage)) tabs: ColumnTabsPage, public navCtrl: NavController, private contentInfoService: ContentInfoService, private recommandInfoService: RecommandInfoService, private trainingInfoService: TrainingInfoService) {
     this.loadContents();
     this.tabs = tabs;
   }
@@ -87,6 +94,17 @@ export class MuseumHomePage {
       this.contentInfosTJNR = this.dealWithImgPath(contentInfos);
     });
 
+    this.trainingInfoService.topList(3).then(contentInfos => {
+      if(contentInfos && contentInfos.length > 0) {
+        this.hasTraining = 1;
+      } else {
+        this.hasTraining = 0;
+      }
+      this.contentInfosPXTZ = this.dealWithImgPath(contentInfos);
+    });
+
+
+
   }
 
   goToPage(columnId) {
@@ -96,9 +114,13 @@ export class MuseumHomePage {
     this.navCtrl.push(RecommandListPage);
   }
 
+  goToTrainingPage(){
+    this.navCtrl.push(TrainingListPage);
+  }
+
   dealWithImgPath(contentInfos) {
     for (var i = 0; i < contentInfos.length; i++) {
-      contentInfos[i].imgName = "http://218.61.0.14:8080/dlqzysgweb/Public/upload/article/" + contentInfos[i].imgName;
+      contentInfos[i].imgName = Constants.IMG_URL + contentInfos[i].imgName;
     }
     return contentInfos;
   }

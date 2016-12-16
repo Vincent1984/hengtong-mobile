@@ -29,7 +29,8 @@ export class ResourceService {
                       }
                     })
                     .catch(err => {
-                      this.handleError(err);
+                      console.log('the error info is ' + err);
+                      //this.handleError(err);
                     });
   }
 
@@ -51,7 +52,7 @@ export class ResourceService {
                       }
                     })
                     .catch(err => {
-                      this.handleError(err);
+                      //this.handleError(err);
                     });
   }
 
@@ -73,7 +74,7 @@ export class ResourceService {
                       }
                     })
                     .catch(err => {
-                      this.handleError(err);
+                      //this.handleError(err);
                     });
   }
 
@@ -94,15 +95,16 @@ export class ResourceService {
                         this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
-                    .catch(err => {this.handleError(err);
+                    .catch(err => {
+                      //this.handleError(err);
 
                     });
   }
 
-  private handleError(error: Response) {
-    console.log(error);
-    return Observable.throw(error.json().error || 'Server Error');
-  }
+  // private handleError(error: Response) {
+  //   console.log(error);
+  //   return Observable.throw(error.json().error || 'Server Error');
+  // }
 
   private queryToString(query: any) {
     let str = '?';
