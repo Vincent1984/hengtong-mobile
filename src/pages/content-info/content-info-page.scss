@@ -1,2 +1,12 @@
 content-info-page {
+	.toolbar-title {
+		white-space: pre-wrap !important;
+		font-size: 1.8rem !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.item-block {
+		min-height: auto !important;
+	}
 }

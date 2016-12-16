@@ -17,11 +17,10 @@
 <ion-content>
   <ion-list>
     <ion-item no-lines>
-      <ion-title text-center>{{contentInfoModel.title}}</ion-title>
+      <ion-title>{{contentInfoModel.title}}</ion-title>
     </ion-item>
-    <ion-item no-lines>
-      <ion-label>{{contentInfoModel.addDate}}</ion-label>
-      <ion-label>{{contentInfoModel.subTitle}}</ion-label>
+    <ion-item>
+      <ion-label color="gray" font-size-1_0 no-margin-top>{{contentInfoModel.addDate}}&nbsp;&nbsp;大连群众艺术馆</ion-label>
     </ion-item>
     <ion-item text-wrap>
       <div [innerHTML]="contentInfoModel.content"></div>
