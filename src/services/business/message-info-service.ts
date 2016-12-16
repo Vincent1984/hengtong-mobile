@@ -4,6 +4,7 @@ import { BusinessService } from '../basic/business-service';
 import { ResourceService } from '../basic/resource-service';
 
 import { MessageInfoModel } from '../../models/message-info-model';
+import {Constants} from "../constants/constants";
 
 @Injectable()
 export class MessageInfoService extends BusinessService<MessageInfoModel> {
@@ -13,8 +14,8 @@ export class MessageInfoService extends BusinessService<MessageInfoModel> {
 
   constructor(private resourceService: ResourceService) {
     super();
-    this.pushUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/users/feedBack';
-    this.pullUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/users/myFeedBack';
+    this.pushUrl = Constants.PUSH_URL;
+    this.pullUrl = Constants.PULL_URL;
   }
 
   push(messageInfo) {

@@ -4,6 +4,7 @@ import { BusinessService } from '../basic/business-service';
 import { ResourceService } from '../basic/resource-service';
 
 import { ContentInfoModel } from '../../models/content-info-model';
+import {Constants} from "../constants/constants";
 
 @Injectable()
 export class ContentInfoService extends BusinessService<ContentInfoModel> {
@@ -13,8 +14,8 @@ export class ContentInfoService extends BusinessService<ContentInfoModel> {
 
   constructor(private resourceService: ResourceService) {
     super();
-    this.listUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/list';
-    this.detailUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/detail';
+    this.listUrl = Constants.LIST_URL;
+    this.detailUrl = Constants.DETAIL_URL;
   }
 
   /**

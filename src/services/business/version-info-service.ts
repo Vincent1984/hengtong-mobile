@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { ResourceService } from '../basic/resource-service';
+import {Constants} from "../constants/constants";
 
 @Injectable()
 export class VersionInfoService {
@@ -8,7 +9,7 @@ export class VersionInfoService {
   apiUrl: string;
 
   constructor(private resourceService: ResourceService) {
-    this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/users/checkVersion';
+    this.apiUrl =  Constants.VERSION_URL;
   }
 
 

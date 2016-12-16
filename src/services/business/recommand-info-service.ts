@@ -7,6 +7,7 @@ import { ContentInfoModel } from "../../models/content-info-model";
 import { PagingModel } from "../../models/paging-model";
 
 import { BusinessService } from '../basic/business-service';
+import {Constants} from "../constants/constants";
 
 @Injectable()
 export class RecommandInfoService extends BusinessService<ContentInfoModel> {
@@ -20,8 +21,7 @@ export class RecommandInfoService extends BusinessService<ContentInfoModel> {
 
   constructor(private resourceService: ResourceService) {
     super();
-    this.apiUrl = 'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/favoriteList';
-    // this.detailUrl =  'http://218.61.0.14:8080/dlqzysgweb/web/commonContent/detail';
+    this.apiUrl = Constants.RECOMMAND_URL;
     this.pagingModel = new PagingModel<ContentInfoModel>(20, 1);
     this.imgQuery = { 'isImag': 1 };
     this.allQuery = { 'isImag': 0 };

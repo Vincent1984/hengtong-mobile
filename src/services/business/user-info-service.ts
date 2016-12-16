@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { ResourceService } from '../basic/resource-service';
 import { StorageService } from '../basic/storage-service';
+import {Constants} from "../constants/constants";
 
 @Injectable()
 export class UserInfoService {
@@ -10,8 +11,8 @@ export class UserInfoService {
   apiRegist: string;
 
   constructor(private resourceService: ResourceService, private storageService: StorageService) {
-    this.apiLogin = 'http://218.61.0.14:8080/dlqzysgweb/web/users/userLogin';
-    this.apiRegist = 'http://218.61.0.14:8080/dlqzysgweb/web/users/register';
+    this.apiLogin = Constants.LOGIN_URL;
+    this.apiRegist = Constants.REGISTER_URL;
   }
 
   login(userInfo) {
