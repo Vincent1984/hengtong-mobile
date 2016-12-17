@@ -25,7 +25,7 @@ export class ContentInfoPage {
   loadContent() {
     this.contentInfoService.getDetail(this.navParams.data.contentId).then(result => {
       if(result){
-        this.contentInfoModel = result[0];
+        this.contentInfoModel = result;
       }else{
         // alert("没有获取到数据");
       }

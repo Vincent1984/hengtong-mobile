@@ -34,16 +34,18 @@ export class TrainingInfoService extends BusinessService<ContentInfoModel> {
    */
   topList(count) {
     return this.resourceService.doGet(this.apiUrl + '/'+ this.columnId + '/' + count + '/' + 1, this.allQuery).then(data => {
+      let contentInfos: Array<ContentInfoModel>;
+      contentInfos = [];
       if (data&&data!=null&&data.result) {
-        let contentInfos: Array<ContentInfoModel>;
-        contentInfos = [];
         for (let i in data.result) {
           let contentInfo = new ContentInfoModel();
           Object.assign(contentInfo, data.result[i]);
           contentInfos.push(contentInfo);
         }
-        return contentInfos;
+      } else {
+        contentInfos.push(ContentInfoModel.getNoRecordInfo());
       }
+      return contentInfos;
     });
   }
 
@@ -53,15 +55,17 @@ export class TrainingInfoService extends BusinessService<ContentInfoModel> {
   findPaging(){
     let pagingModel = this.getPagingModel(this.columnId);
     return this.resourceService.doGet(this.apiUrl + '/'+ this.columnId + '/' + pagingModel.reqCount + '/' + pagingModel.startIndex, this.allQuery).then(data => {
+      let contentInfos = new Array<ContentInfoModel>();
       if (data.result) {
-        let contentInfos = new Array<ContentInfoModel>();
         data.result.forEach(object => {
           let contentInfo = new ContentInfoModel();
           Object.assign(contentInfo, object);
           contentInfos.push(contentInfo);
         });
-        return pagingModel.refresh(data.dataCounts, contentInfos);
+      }else {
+        contentInfos.push(ContentInfoModel.getNoRecordInfo());
       }
+      return pagingModel.refresh(data?data.dataCounts:1, contentInfos);
     });
   }
 

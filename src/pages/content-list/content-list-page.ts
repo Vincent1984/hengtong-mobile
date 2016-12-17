@@ -55,7 +55,7 @@ export class ContentListPage {
 
   loadContents(columnId) {
     return this.contentInfoService.findPaging(columnId).then(pagingModel => {
-      if (pagingModel.result && 0 < pagingModel.result.length) {
+      if (pagingModel && pagingModel.result && 0 < pagingModel.result.length) {
         // 设置默认选中的栏目数据
         if (this.columnInfoModel.selectedSubId == columnId) {
           this.contentInfos = pagingModel.result;

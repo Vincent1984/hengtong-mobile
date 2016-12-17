@@ -17,7 +17,9 @@ export class ResourceService {
     let options = new RequestOptions({ headers: headers });
     return this.http.get(url + this.queryToString(query), options)
                     .toPromise()
-                    .then(res => res.json())
+                    .then(res => res.json(), function (error) {
+                      console.log(".....print exception here "+ error)
+                    })
                     .then(data => {
                       if (data && 0 == data.errorCode) {
                         return data;
@@ -25,7 +27,7 @@ export class ResourceService {
                         this.showAlert("小编没有获取到数据哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
                       } else {
-                        this.showAlert("接口出现异常情况，请联系管理员");
+                        // this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {
@@ -48,7 +50,7 @@ export class ResourceService {
                         this.showAlert("小编发送有点问题哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
                       } else {
-                        this.showAlert("接口出现异常情况，请联系管理员");
+                        // this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {
@@ -70,7 +72,7 @@ export class ResourceService {
                         this.showAlert("小编发送有点问题哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
                       } else {
-                        this.showAlert("接口出现异常情况，请联系管理员");
+                        // this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {
@@ -92,7 +94,7 @@ export class ResourceService {
                         this.showAlert("小编发送有点问题哦@_@"+data.errorMsg);
                         console.log('the error info is ' + data.errorMsg);
                       } else {
-                        this.showAlert("接口出现异常情况，请联系管理员");
+                        // this.showAlert("接口出现异常情况，请联系管理员");
                       }
                     })
                     .catch(err => {

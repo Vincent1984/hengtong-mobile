@@ -94,7 +94,7 @@ export class MuseumHomePage {
       this.contentInfosTJNR = this.dealWithImgPath(contentInfos);
     });
 
-    this.trainingInfoService.topList(3).then(contentInfos => {
+    this.trainingInfoService.topList(4).then(contentInfos => {
       if(contentInfos && contentInfos.length > 0) {
         this.hasTraining = 1;
       } else {
@@ -120,7 +120,11 @@ export class MuseumHomePage {
 
   dealWithImgPath(contentInfos) {
     for (var i = 0; i < contentInfos.length; i++) {
-      contentInfos[i].imgName = Constants.IMG_URL + contentInfos[i].imgName;
+      if (contentInfos[i].imgName) {
+        contentInfos[i].imgName = Constants.IMG_URL + contentInfos[i].imgName;
+      } else {
+        contentInfos[i].imgName =  'assets/images/culture.jpg';
+      }
     }
     return contentInfos;
   }

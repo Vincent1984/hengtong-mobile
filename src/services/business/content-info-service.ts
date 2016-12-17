@@ -11,6 +11,7 @@ export class ContentInfoService extends BusinessService<ContentInfoModel> {
 
   listUrl: string;
   detailUrl: string;
+  contentInfo: ContentInfoModel;
 
   constructor(private resourceService: ResourceService) {
     super();
@@ -23,15 +24,18 @@ export class ContentInfoService extends BusinessService<ContentInfoModel> {
    */
   findTops(columnId, count, startIndex?) {
     return this.resourceService.doGet(this.listUrl + '/' + columnId + '/' + count + '/' + (startIndex || 1), { 'isImag': 1 }).then(data => {
-      if (data.result) {
-        let contentInfos = new Array<ContentInfoModel>();
+      let contentInfos = new Array<ContentInfoModel>();
+      if (data && data.result) {
         data.result.forEach(object => {
           let contentInfo = new ContentInfoModel();
           Object.assign(contentInfo, object);
           contentInfos.push(contentInfo);
         });
-        return contentInfos;
+      }else {
+        //do nothing, don't need to show to user
+        contentInfos.push(ContentInfoModel.getNoRecordInfo());
       }
+      return contentInfos;
     });
   }
 
@@ -41,29 +45,33 @@ export class ContentInfoService extends BusinessService<ContentInfoModel> {
   findPaging(columnId) {
     let pagingModel = this.getPagingModel(columnId);
     return this.resourceService.doGet(this.listUrl + '/' + columnId + '/' + pagingModel.reqCount + '/' + pagingModel.startIndex, { 'isImag': 0 }).then(data => {
-      if (data.result) {
-        let contentInfos = new Array<ContentInfoModel>();
+      let contentInfos = new Array<ContentInfoModel>();
+      if (data && data.result) {
         data.result.forEach(object => {
           let contentInfo = new ContentInfoModel();
           Object.assign(contentInfo, object);
           contentInfos.push(contentInfo);
         });
-        return pagingModel.refresh(data.dataCounts, contentInfos);
+      }else {
+        //do nothing, don't need to show to user
+        contentInfos.push(ContentInfoModel.getNoRecordInfo());
       }
+      return pagingModel.refresh(data?data.dataCounts:1, contentInfos);
     });
   }
 
   getDetail(contentId) {
     return this.resourceService.doGet(this.detailUrl + '/' + contentId, null).then(data => {
-      if (data&&data!=null) {
+      let contentInfo: ContentInfoModel;
+      if (data&&data!=null && data.result) {
         if (data.result && data.result!=null) {
-          let contentInfo: ContentInfoModel;
-          contentInfo = data.result;
-          return contentInfo;
+          contentInfo = data.result[0];
         }
       } else {
-        // alert("数据获取失败，请稍后重试");
+        //do nothing, don't need to show to user
+        contentInfo = ContentInfoModel.getNoRecordInfo();
       }
+      return contentInfo;
 
     });
   }
