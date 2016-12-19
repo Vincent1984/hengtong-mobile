@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import {NavController, Tabs, Col} from 'ionic-angular';
+import {NavController, Tabs} from 'ionic-angular';
 
 import { MyartTabsPage } from '../myart-tabs/myart-tabs-page';
 import { UserLoginPage } from '../user-login/user-login-page';
@@ -10,7 +10,6 @@ import { ColumnType } from '../../models/column-info-model';
 
 import { ResourceService } from '../../services/basic/resource-service';
 import { UserInfoService } from '../../services/business/user-info-service';
-import {MuseumHomePage} from "../museum-home/museum-home-page";
 
 @Component({
   selector: 'column-tabs-page',

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.hengtongmobile289481" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.hengtongmobile289481" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>大连群艺</name>
-  <description>大连群众艺术馆项目</description>
+  <description>大连市群众艺术馆项目</description>
   <author email="17229775@qq.com" href="http://ionicframework.com/">&#xD;
 		Ionic Framework Team&#xD;
 	</author>
@@ -37,7 +37,7 @@
   <preference name="SplashMaintainAspectRatio" value="true"/>
   <preference name="FadeSplashScreenDuration" value="300"/>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="SplashScreenDelay" value="5000"/>
   <preference name="loadUrlTimeoutValue" value="120000"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>

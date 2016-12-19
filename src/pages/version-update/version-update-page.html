@@ -14,8 +14,9 @@
     <ion-list>
       <ion-list-header>
         <ion-label stacked>当前版本:</ion-label>
+        <ion-label stacked>{{versionInfoModel.osStr}} {{versionInfoModel.currentVersion}}</ion-label>
       </ion-list-header>
     </ion-list>
-    <button ion-button full>升级</button>
+    <button ion-button full *ngIf="canUpdate==1" (click)="doUpgrade()">升级</button>
   </ion-card>
 </ion-content>
