@@ -17,7 +17,6 @@ export class VersionInfoModel {
     });
 
     this.osStr = Device.device.platform;
-
   }
 
   setVersion(version){
@@ -28,7 +27,5 @@ export class VersionInfoModel {
   toString(){
     return this.osStr+this.currentVersion;
   }
-
-
 
 }
