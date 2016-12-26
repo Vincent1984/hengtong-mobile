@@ -18,6 +18,8 @@
       </ion-list-header>
     </ion-list>
     <!--<button ion-button full *ngIf="canUpdate==1" (click)="doUpgrade()">升级</button>-->
-    <a *ngIf="canUpdate==1"  href="{{newUrl}}">升级</a>
+    <ion-list>
+      <a *ngIf="canUpdate==1"  href="{{newUrl}}">升级</a>
+    </ion-list>
   </ion-card>
 </ion-content>

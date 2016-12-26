@@ -41,9 +41,14 @@ export class VersionUpdatePage{
         promise.then(data => {
           if (data && 0 == data.errorCode) {
             if (data.result.length>0) {
-              this.newUrl = data.result[0];
-              this.canUpdate = 1;
-              this.showAlert('最新版本获取成功');
+              if(data.result[0].indexOf("http")!=-1){
+                this.newUrl = data.result[0];
+                this.canUpdate = 1;
+                this.showAlert('最新版本获取成功');
+              }else{
+                this.canUpdate = 0;
+                this.showAlert('无最新版本');
+              }
             }else {
               this.canUpdate = 0;
               this.showAlert('无最新版本');
