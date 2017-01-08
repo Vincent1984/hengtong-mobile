@@ -2,8 +2,8 @@
 <widget id="com.ionicframework.hengtongmobile289481" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>大连群艺</name>
   <description>大连市群众艺术馆项目</description>
-  <author email="17229775@qq.com" href="http://ionicframework.com/">&#xD;
-		Ionic Framework Team&#xD;
+  <author email="17229775@qq.com" href="http://www.dlqzysg.com/">&#xD;
+		大连群众艺术馆&#xD;
 	</author>
   <content src="index.html"/>
   <access origin="*"/>
