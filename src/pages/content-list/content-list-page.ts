@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 
 // 引入内容信息页面
 import { ContentInfoPage } from '../content-info/content-info-page';
@@ -30,15 +30,18 @@ export class ContentListPage {
   contentInfos: Array<ContentInfoModel>;
   contentInfosMap: Map<string, Array<ContentInfoModel>>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private contentInfoService: ContentInfoService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, private contentInfoService: ContentInfoService) {
 
     this.columnInfoModel = navParams.data;
 
     if (this.columnInfoModel.subColumns) {
       this.hasSubColumn = true;
       this.loadContentsMap(this.columnInfoModel.subColumns);
+      this.events.subscribe('subColumn:selected', (subColumnIndex) => {
+        this.doSelect(this.columnInfoModel.subColumns[subColumnIndex]);
+      });
     }
-
+ 
   }
 
   /**
@@ -67,8 +70,12 @@ export class ContentListPage {
   }
 
   doSelect(subColumn) {
-    this.columnInfoModel.selectedSubId = subColumn.columnId;
-    this.contentInfos = this.contentInfosMap.get(subColumn.columnId);
+    this.doSelectById(subColumn.columnId);
+  }
+
+  doSelectById(subColumnId) {
+    this.columnInfoModel.selectedSubId = subColumnId;
+    this.contentInfos = this.contentInfosMap.get(subColumnId);
   }
 
   /**

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import {NavController, Tabs} from 'ionic-angular';
+import {NavController, Tabs, Events} from 'ionic-angular';
 
 import { MyartTabsPage } from '../myart-tabs/myart-tabs-page';
 import { UserLoginPage } from '../user-login/user-login-page';
@@ -22,7 +22,7 @@ export class ColumnTabsPage {
 
   tabs: Array<TabModel>;
 
-  constructor(public navCtrl: NavController, private userInfoService: UserInfoService) {
+  constructor(public navCtrl: NavController, public events: Events, private userInfoService: UserInfoService) {
 
     this.tabs = TabModel.buildTabs();
 
@@ -40,8 +40,11 @@ export class ColumnTabsPage {
     }
   }
 
-  goSelected(tabIndex) {
+  goSelected(tabIndex, subColumnIndex) {
     this.tabRef.select(tabIndex);
+    if (undefined != subColumnIndex) {
+      this.events.publish('subColumn:selected', subColumnIndex);
+    }
   }
 
 }
