@@ -44,7 +44,7 @@ export class ColumnTabsPage {
     this.tabRef.select(tabIndex);
   }
 
-  goSelected(tabIndex, subColumnIndex) {
+  goSelected2(tabIndex, subColumnIndex) {
     this.tabRef.select(tabIndex);
     this.events.publish('subColumn:selected', subColumnIndex);
   }
