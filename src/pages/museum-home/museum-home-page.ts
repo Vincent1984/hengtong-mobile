@@ -11,10 +11,10 @@ import { ContentInfoModel } from "../../models/content-info-model";
 import { ResourceService } from "../../services/basic/resource-service";
 import { ContentInfoService } from '../../services/business/content-info-service';
 import { RecommandInfoService } from "../../services/business/recommand-info-service";
-import { RecommandListPage } from "../recommand-list/recommand-list-page";
-import { TrainingListPage } from "../training-list/training-list-page";
-import { TrainingInfoService } from "../../services/business/training-info-service";
-import { Constants } from "../../services/constants/constants";
+import {RecommandListPage} from "../recommand-list/recommand-list-page";
+import {TrainingListPage} from "../training-list/training-list-page";
+import {TrainingInfoService} from "../../services/business/training-info-service";
+import {Constants} from "../../services/constants/constants";
 
 @Component({
   selector: 'museum-home-page',
