@@ -40,11 +40,13 @@ export class ColumnTabsPage {
     }
   }
 
+  goSelected(tabIndex) {
+    this.tabRef.select(tabIndex);
+  }
+
   goSelected(tabIndex, subColumnIndex) {
     this.tabRef.select(tabIndex);
-    if (undefined != subColumnIndex) {
-      this.events.publish('subColumn:selected', subColumnIndex);
-    }
+    this.events.publish('subColumn:selected', subColumnIndex);
   }
 
 }
